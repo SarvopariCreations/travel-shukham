@@ -1,0 +1,101 @@
+::ng-deep .owl-carousel .owl-item img {
+  max-width: 100%;
+  width: auto;
+}
+
+::ng-deep .custom-slide img {
+  max-width: 100%;
+  width: auto;
+}
+
+::ng-deep .owl-theme .owl-nav [class*="owl-"] {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+}
+
+
+.date-contain {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  border-radius: 1rem;
+  border: 1px solid #d9d9d9;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+  background-color: white;
+
+  label{
+    background-color: aquamarine;
+    font-size: 14px;
+    color: black;
+    padding: 5px 10px;
+    white-space: nowrap;
+  }
+
+  span{
+    background-color: white;
+    padding:10px 10px;
+    font-size:1rem;
+    font-weight:500;
+    white-space: nowrap;
+  }
+}
+
+// ::ng-deep .owl-carousel .owl-item {
+//   width:max-content !important; /* Set the desired width */
+// }
+
+::ng-deep .owl-carousel .owl-stage-outer{
+padding-bottom: 0rem;
+}
+
+.mobile-view-calender{
+  gap:10px;
+  overflow: auto;
+  padding-bottom: 1rem;
+  padding-inline: 1rem;
+
+  button{
+    position: relative;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 1rem;
+    white-space: nowrap;
+    border: 1px solid #cdcdcd;
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    &:hover{   
+      background-color: black;
+      color: white; 
+      border-color: black;  
+
+      .carot{
+        opacity: 1;
+        border-top-color: black;
+      }
+    }
+  }
+  .carot{
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateY(100%) translateX(-50%);
+    opacity: 0;
+    transition: opactiy 0.2s, border-color 0.2s;
+    border-top-color: black;
+    border-width: 0.5rem;
+    border-top: 0.25rem dashed;
+    border-right: 0.25rem solid transparent;
+    border-left: 0.25rem solid transparent;
+  }
+}

@@ -1,0 +1,241 @@
+.side-panel-controller{
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .side-panel-wrapper{                
+        top: auto;
+        transform: unset;
+        padding: 0px 0px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-bottom: unset;
+        overflow-x: hidden;
+        width: 1013px;
+        position: absolute;
+        height: auto;
+        background-color: white;
+        bottom: auto;
+        /* transform: translateX(-70%); */        
+    }
+
+    .side-panel-top-section
+    {
+        padding: 15px 15px 0 15px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+        background: #fff;
+        z-index: 13;
+        padding-bottom: 1rem;
+    }
+    .close-icon{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background-color: transparent;
+        border: none;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.trip-location-breadcumb{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.location-from{
+    display: flex;
+    align-items: center;    
+    font-weight:500;
+
+    div{
+        margin-inline: 5px;
+    }
+    img{
+        width:30px;
+        margin-left: 10px;        
+    }
+}
+
+.fare-card-wrapper{
+    width: 316px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(222 184 135);
+    position: relative;
+    border-radius: 6px;
+
+    p{
+        margin-bottom: 10px;
+    }
+    .ff-card-heading{
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        justify-content:center;
+        padding: 1rem;
+        background-color: #f9f9f9;     
+        border-radius: 6px 6px 0px 0px;   
+    }
+    .slashed-price-sec{
+        padding-top: 1rem;
+    }
+    .ff-card-body{
+        padding-inline: 1rem;
+        padding-block: 1rem;
+
+        ul{
+            list-style-type: none;
+            padding-left: 0px;
+        }
+        li{
+            display: flex;
+            align-items: start;
+            gap: 5px;
+            font-size: 14px;
+            color: darkslategray;
+        }
+
+        p{
+            b{
+                font-weight: 500;
+            }
+        }
+    }    
+
+    .slashed-fare-with-tag{
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .ts-offer{
+        position: absolute;
+        top: -15px;
+        left:auto;
+        right: auto;
+        background-color: burlywood;
+        border-radius: 16px;
+        margin: 0px auto;
+        transform: translateX(0%); /* Adjust position horizontally */
+        transition: left 0.3s ease; /* Corrected syntax */
+        padding: 5px 1rem;
+        color: white;    
+        display: flex;
+        gap: 5px;
+        font-size: 14px;
+        align-items: center;
+    }
+
+    .cap-text{
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        white-space: nowrap;
+
+        div{
+            font-weight: 600;
+            margin: 0px 5px;
+            white-space: nowrap;
+        }
+    }
+    .ff-card-footer{
+        width: 100%;
+        display: flex;
+        color: #ffffff;
+        background: linear-gradient(93deg, #ffd599, #eca846);
+        border-color: #eba746 #eba746 transparent;        
+        display: flex;
+        align-items: center;
+        justify-content: center;   
+
+        button{
+            background-color: transparent;
+            border-radius: 0px;
+            border: none;
+            padding: 1rem;
+            color: white;
+        }
+    }
+}
+
+.list-of-price-compare{
+    padding: 1rem;
+}
+
+.off-benefit{
+    display: flex;
+    background: linear-gradient(259deg, rgba(204, 245, 242, 0.5019607843), rgb(38 140 255));
+    // color: white;
+    padding:10px;
+    font-size: 12px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-persuasions{
+    .cap-text{
+        font-size: 14px;
+    }
+}
+
+.list-of-price-compare{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+@media(max-width:768px){
+    .side-panel-controller{
+        z-index: 1111;
+        overflow: auto;
+        width: 100%;
+        align-items: start;
+        justify-content: start;
+    }
+    .list-of-price-compare{
+        width: 100%;
+        overflow: auto;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .side-panel-controller .side-panel-wrapper{
+        width: 100%;
+    }
+    .side-panel-top-section{
+        h5{
+            font-size: 1rem;
+        }
+    }
+    .location-from{
+        flex-wrap: wrap;
+    }
+    .side-panel-controller .side-panel-wrapper{
+        flex-direction: column;
+    }
+    .fare-card-wrapper{
+        width: 100%;
+    }
+}

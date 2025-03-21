@@ -1,0 +1,214 @@
+.guides-wrap {
+    background-size: cover;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) 101.02%), url(https://triprex.egenslab.com/wp-content/plugins/triprex-core//inc/theme-options/images/breadcrumb/inner-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px 0 50px;
+    background-color: #1d231f;
+
+
+    h4 {
+        color: white;
+        max-width: 50%;
+        text-align: center;
+    }
+
+    input {
+        padding: 1rem;
+        width: 100%;
+        max-width: 575px;
+        border-radius: 5px;
+        border: none;
+        // text-align: center;
+        text-transform: capitalize;
+        margin-top: 2rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+
+.category-bx {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Adjusts the spacing between columns */
+
+
+    .landing-cards-section-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 77, 95, .2)), to(rgba(0, 0, 0, .25)));
+            background: linear-gradient(180deg, rgba(33, 77, 95, .2) 0, rgba(0, 0, 0, .25));
+        }
+
+        // &:hover .landing-cards-section-image::before{
+        //         background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 77, 95, .8)), to(rgba(0, 0, 0, .25)));
+        //         background: linear-gradient(180deg, rgba(33, 77, 95, .8) 0, rgba(0, 0, 0, .25));
+        //         -webkit-animation: opac .4s;
+        //         animation: opac .4s;
+        // }
+
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .landing-cards-section-image img {
+        width: 100%;
+        height: 340px;
+        -webkit-transition: -webkit-transform 1s ease;
+        transition: -webkit-transform 1s ease;
+        transition: transform 1s ease;
+        transition: transform 1s ease, -webkit-transform 1s ease;
+    }
+
+    .landing-cards-icon {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+
+        h2 {
+            font-size: 28px;
+            letter-spacing: 3px;
+            color: #fff;
+                text-transform: uppercase;
+                margin-top: 5px;
+                font-size: 24px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-shadow: 0 2px 8px #223c44;
+        }
+
+        i {
+            background: url(https://TravelSukham-guides-images.imgix.net/landing/guides_icons_1.png) no-repeat;
+            background-size: auto 100%;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.breadcrumb-section {
+    background-size: cover;
+    background: linear-gradient(270deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0.3) 101.02%),
+        url(https://triprex.egenslab.com/wp-content/plugins/triprex-core//inc/theme-options/images/breadcrumb/inner-banner-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 120px 0 130px;
+    background-color: #1d231f
+}
+
+.breadcrumb-section .banner-content h1 {
+    color: white;
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    word-break: break-all
+}
+
+@media(max-width: 767px) {
+    .breadcrumb-section .banner-content h1 {
+        font-size: 50px
+    }
+}
+
+@media(max-width: 576px) {
+    .breadcrumb-section .banner-content h1 {
+        font-size: 40px
+    }
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.breadcrumb-list li {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 26px
+}
+
+.breadcrumb-list li a {
+    color: #63AB45;
+    text-decoration: none;
+}
+
+.breadcrumb-list li::before {
+    content: url(../../assets/arrow.svg);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.breadcrumb-list li:first-child {
+    padding-left: 0
+}
+
+.breadcrumb-list li:first-child::before {
+    content: ""
+}
+
+@media(max-width:678px){
+    .top-70{
+        margin-top: 70px;
+    }
+    .category-bx{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        
+        a{
+            height: 175px;
+        }
+
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .landing-cards-icon{
+            i{
+                display: none;
+            }
+            h2{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .guides-wrap h4{
+        max-width: 90%
+    }
+}

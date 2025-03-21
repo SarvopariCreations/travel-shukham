@@ -1,0 +1,120 @@
+<div class="side-panel-controller">
+    <button class="close-icon" (click)="closeCityModal()">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+    <div class="side-panel-wrapper">
+        <div class="side-panel-top-section">
+            <div class="transfer-listing-header mb-3">
+                <h5>Add Activity</h5>
+            </div>
+            <div class="side-fliter-hotel d-flex gap-2">
+                <div class="col-">
+                    <div class="dropdown">                    
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Time Slot
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">Morning</a></li>
+                          <li><a class="dropdown-item" href="#">Afternoon</a></li>
+                          <li><a class="dropdown-item" href="#">Evening</a></li>
+                        </ul>
+                      </div>                
+                </div> 
+                <div class="col-">
+                    <div class="dropdown">                    
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Activity duration
+                        </button>
+                        <ul class="dropdown-menu p-3" aria-labelledby="dropdownCheckboxButton">
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option1">
+                                <label class="form-check-label" for="option1">Quarter day</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option2">
+                                <label class="form-check-label" for="option2">
+                                    Half day
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option3">
+                                <label class="form-check-label" for="option3">Full day</label>
+                              </div>
+                            </li>
+                          </ul>
+                      </div>                
+                </div>                  
+                <div class="col-">
+                    <div class="dropdown">                    
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Group Type
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">Shared</a></li>
+                          <li><a class="dropdown-item" href="#">Private</a></li>
+                        </ul>
+                      </div>                
+                </div>
+                <div class="col-">
+                    <div class="dropdown">                    
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Interests
+                        </button>
+                        <ul class="dropdown-menu p-3" aria-labelledby="dropdownCheckboxButton">
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option1">
+                                <label class="form-check-label" for="option1">Advanture & Outdoor</label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option2">
+                                <label class="form-check-label" for="option2">
+                                    Art & culture
+                                </label>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="option3">
+                                <label class="form-check-label" for="option3">Shopping & Leisure</label>
+                              </div>
+                            </li>
+                          </ul>
+                      </div>                
+                </div> 
+                <div class="col-">
+                    <div class="dropdown">                    
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Other Filters
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#">Top Hightlight</a></li>
+                          <li><a class="dropdown-item" href="#">Kid Friendly</a></li>
+                          <li><a class="dropdown-item" href="#">Fast Selling</a></li>
+                          <li><a class="dropdown-item" href="#">Less explored gems</a></li>
+                        </ul>
+                      </div>                
+                </div> 
+                <div class="col- more-filter">
+                    <span class="material-symbols-outlined">
+                        tune
+                    </span> 
+                    More filter               
+                </div>             
+            </div>
+        </div>
+        <div class="add-activity-list">
+            <app-filter-listing></app-filter-listing>
+        </div>
+    </div>
+
+</div>

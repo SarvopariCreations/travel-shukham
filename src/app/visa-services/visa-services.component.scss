@@ -1,0 +1,66 @@
+h1, h2 {
+    color: #333;
+}
+ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #333;
+}
+
+
+.ts-cotent-wrapper{
+    padding-block: 2rem;
+
+    h1{
+        margin-bottom: 1.2rem;
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-left: 0px;
+            margin-bottom: 0px;
+            margin-block: 2rem;
+            margin-top: 1rem;
+          }
+          li{
+            display: flex;
+            flex: 1;
+            gap: 10px;
+            position: relative;
+            padding-left: 2rem;
+            flex-direction: row;
+            
+            &:before{
+              background: url(../../assets/ok-icon.svg) no-repeat left center;
+              width: 20px;
+              height: 20px;
+              content:'';
+              position: absolute;    
+              left: 0px;
+            }
+        }
+    }
+
+    @media(max-width:768px){
+        .top-70{
+            margin-top: 70px;
+        }
+        .ts-cotent-wrapper li{
+            flex-direction: column;
+        }
+        .ts-cotent-wrapper{
+            padding-block:1rem;
+        }
+        .ts-cotent-wrapper li:before{
+            top:4px;
+        }
+    }

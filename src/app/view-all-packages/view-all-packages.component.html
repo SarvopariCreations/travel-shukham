@@ -1,0 +1,54 @@
+<div class="ts-view-packages-list-wrap">
+    <div class="ts-view-package-header">
+        <div class="container d-flex flex-row justify-content-between">
+        <div class="logo">
+            <img src="../../assets/ts-logo.png" alt="">
+        </div>
+        <a class="close-icon" routerLink="/package-list">
+            <span class="material-symbols-outlined">
+                arrow_back_ios_new
+                </span>
+            Back
+        </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="ts-package-list">
+            <div class="ts-package-header-row">
+                <label>Don’t have the time to curate?</label>
+                <p>Instantly check out our best-selling packages</p>
+            </div>
+            <div class="ts-package-list-row d-none d-sm-flex">
+                <app-thumbnail-slider [images]="imageSet5"></app-thumbnail-slider>
+            </div>
+
+            <div class="ts-list-of-hotel-row">                                
+                <div class="ts-hotel-list">
+                    <div class="ts-hotel-list-item" *ngFor="let hotel of hotels" routerLink="/hotel-detail">
+                      <div class="ts-hotel-list-img">
+                        <img [src]="hotel.imgSrc" alt="">
+                      </div>
+                      <div class="ts-hotel-list-detail">
+                        <h5 class="mb-0">{{ hotel.name }}</h5>
+                        <p>{{ hotel.location }}</p>
+                        <div class="ts-hotel-rating">
+                          <span class="count-rating">{{ hotel.rating }}</span>
+                          <span class="title">Very good</span>
+                          <a href="#" class="total-review">({{ hotel.reviewCount }} reviews)</a>
+                        </div>
+                        <div class="ts-hotel-price">
+                          <span class="price">₹ {{ hotel.price }}</span>
+                          <span class="per-head">+ ₹{{ hotel.taxesAndFees }} taxes & fees / night</span>
+                        </div>        
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="view-package-all" routerLink="/package-list">View all Packages</div>
+        </div>
+    </div>
+</div>
+
+<div>
+</div>

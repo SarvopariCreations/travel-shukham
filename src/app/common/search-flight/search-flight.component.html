@@ -1,0 +1,482 @@
+<form method="get" action="" id="tour-query-form"  class="d-none d-sm-flex">
+  <div class="filter-area flight-search-area">
+    <div class="choose-flight-option">
+      <div>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="option1">One Way</label>
+
+          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="option2">Round trip</label>
+
+          <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+          <label class="btn btn-outline-primary" for="option3">Multi city</label>
+        </div>
+      </div>
+      <div class="notes">Book International and Domestic Flights</div>
+    </div>
+    <div class="flight-booking-box">
+      <div class="flight-search-selection">
+        <div class="search-city">
+          <label for="fromCity">
+            <span class="from-city-label">From</span>
+            <input type="text" placeholder="" readonly class="fw-bold" value="Delhi">
+            <span class="truncate" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">BOM,
+              Chhatrapati Shivaji International
+              Airport
+              India</span>
+
+            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton">
+              <!-- Search Input -->
+              <div class="dropdown-inner-search">
+                <input type="text" placeholder="From" [(ngModel)]="searchQuery" (input)="filterSearch()"
+                  [ngModelOptions]="{standalone: true}" />
+                <span class="material-symbols-outlined">search</span>
+              </div>
+
+              <!-- Flight Search List -->
+              <div class="flight-search-list">
+                <!-- Recent Searches -->
+                <div class="recent-flight-list" *ngIf="recentSearches?.length">
+                  <h6 class="gray5 fw-normal mb-0">Recent Searches</h6>
+                  <div class="d-flex flex-column" *ngFor="let flight of recentSearches">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                      <h3 class="font14 mb-1">{{ flight.city }}</h3>
+                      <b class="font14 fw-medium">{{ flight.code }}</b>
+                    </div>
+                    <div>
+                      <p class="font14 mb-0 gray6">{{ flight.airport }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="popular-flight-list" *ngIf="filteredCities?.length">
+                  <h6 class="gray5 fw-normal mb-0">Popular Cities</h6>
+                  <div class="d-flex flex-column" *ngFor="let flight of filteredCities">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                      <h3 class="font14 mb-1">{{ flight.city }}</h3>
+                      <b class="font14 fw-medium">{{ flight.code }}</b>
+                    </div>
+                    <div>
+                      <p class="font14 mb-0 gray6">{{ flight.airport }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </label>
+        </div>
+        <span class="swap-city">
+          <span class="material-symbols-outlined">
+            swap_horiz
+          </span>
+        </span>
+        <div class="search-city">
+          <label for="fromCity">
+            <span class="from-city-label">To</span>
+            <input type="text" placeholder="" readonly class="fw-bold d-none" value="Bombay">
+            <span class="truncate" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Enter City or
+              Airport</span>
+            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton">
+              <!-- Search Input -->
+              <div class="dropdown-inner-search">
+                <input type="text" placeholder="To" [(ngModel)]="searchQuery" (input)="filterSearch()"
+                  [ngModelOptions]="{standalone: true}" />
+                <span class="material-symbols-outlined">search</span>
+              </div>
+
+              <!-- Flight Search List -->
+              <div class="flight-search-list">
+                <!-- Recent Searches -->
+                <div class="recent-flight-list" *ngIf="recentSearches?.length">
+                  <h6 class="gray5 fw-normal mb-0">Recent Searches</h6>
+                  <div class="d-flex flex-column" *ngFor="let flight of recentSearches">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                      <h3 class="font14 mb-1">{{ flight.city }}</h3>
+                      <b class="font14 fw-medium">{{ flight.code }}</b>
+                    </div>
+                    <div>
+                      <p class="font14 mb-0 gray6">{{ flight.airport }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Popular Cities -->
+                <div class="popular-flight-list" *ngIf="filteredCities?.length">
+                  <h6 class="gray5 fw-normal mb-0">Popular Cities</h6>
+                  <div class="d-flex flex-column" *ngFor="let flight of filteredCities">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                      <h3 class="font14 mb-1">{{ flight.city }}</h3>
+                      <b class="font14 fw-medium">{{ flight.code }}</b>
+                    </div>
+                    <div>
+                      <p class="font14 mb-0 gray6">{{ flight.airport }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </label>
+        </div>
+        <div class="dates">
+          <span class="dates-label from-city-label">Departure</span>
+
+          <label class="d-flex flex-row justify-content-between">
+            <div class="d-flex flex-row flex-sm-column align-items-center align-sm-items-center gap-2 gap-sm-0">
+              <p class="gap-2 gap-sm-0">
+                <span class="font30 latoBlack">30</span>
+                <span>Aug</span>
+                <span class="shortYear">24</span>
+              </p>
+              <span>Friday</span>
+            </div>
+            <span class="material-symbols-outlined">
+              keyboard_arrow_down
+            </span>
+          </label>
+        </div>
+        <div class="dates reDates">
+          <label>
+            <span class="dates-label from-city-label">Returns</span>
+            <p class="font12">Tap to add a
+              return date for bigger
+              discounts</p>
+            <label class="d-none flex-row justify-content-between">
+              <div class="d-flex flex-column">
+                <p class="">
+                  <span class="font30 latoBlack">30
+                  </span>
+                  <span>Aug</span>
+                  <span class="shortYear">24</span>
+                </p>
+                <span class="code">Friday</span>
+              </div>
+              <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </label>
+          </label>
+        </div>
+
+        <div class="flight-traveller">
+          <label>
+            <span class="dates-label" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Travellers
+              & Class <span class="material-symbols-outlined">
+                keyboard_arrow_down
+              </span>
+            </span>
+            <input type="text">
+            <p class="blackText font20 code lineHeight36"><span class="appendRight10"><span
+                  class="font30 latoBlack">1&nbsp;</span>Traveller</span>
+            </p>
+            <p class="font12">Economy/Premium Economy</p>
+
+            <ul class="dropdown-menu passenger-dropdown dropdown-menu-end" aria-labelledby="dropdownMenuButton" (click)="$event.stopPropagation()">
+              <div class="passenger-select-count">
+                <div class="choose-adult-children">
+                  <div class="choose-adults">
+                    <span>ADULTS (12y +)</span>
+                    <label>on the day of travel</label>
+                    <div class="choose-quantative">
+                      <span>-</span>
+                      2
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div class="children-adults">
+                    <span>CHILDREN (2y - 12y ) </span>
+                    <label>on the day of travel</label>
+                    <div class="choose-quantative">
+                      <span>-</span>
+                      0
+                      <span>+</span>
+                    </div>
+                  </div>
+                  <div class="children-adults">
+                    <span>INFANTS (below 2y)</span>
+                    <label>on the day of travel</label>
+                    <div class="choose-quantative">
+                      <span>-</span>
+                      0
+                      <span>+</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 choose-travel-class">
+                  <label>CHOOSE TRAVEL CLASS</label>
+                  <ul class="" (click)="$event.stopPropagation()">
+                    <li class="">Economy/Premium Economy</li>
+                    <li class="selected">Premium Economy</li>
+                    <li class="">Business</li>
+                    <li class="">First Class</li>
+                  </ul>
+                </div>  
+              </div>
+            </ul>
+
+
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="special-fare-options">
+      <label class="mb-3">Select a special fare</label>
+      <div class="d-flex gap-3 space-options">
+        <div class="fare-card-item" style="background-color: rgb(234, 245, 255); border-color: rgb(0, 140, 255);">
+          <div><span class="customRadioBtn sizeSm primary "><input type="radio" value="" checked=""><span
+                class="outer "><span class="inner"></span></span></span></div>
+          <div>
+            <div class="" style="color: rgb(0, 140, 255);">Regular</div>
+            <div class="" style="color: rgb(117, 117, 117);">Regular
+              fares</div>
+          </div>
+        </div>
+        <div class="fare-card-item">
+          <div><span class="customRadioBtn sizeSm primary "><input type="radio" value=""><span class="outer "><span
+                  class="inner"></span></span></span></div>
+          <div>
+            <div class="" style="color: rgb(74, 74, 74);">Student</div>
+            <div class="" style="color: rgb(117, 117, 117);">Extra
+              discounts/baggage</div>
+          </div>
+        </div>
+        <div class="fare-card-item">
+          <div><span class="customRadioBtn sizeSm primary "><input type="radio" value=""><span class="outer "><span
+                  class="inner"></span></span></span></div>
+          <div>
+            <div class="" style="color: rgb(74, 74, 74);">Senior Citizen</div>
+            <div class="" style="color: rgb(117, 117, 117);">up to
+              ₹600 off</div>
+          </div>
+        </div>
+        <div class="fare-card-item">
+          <div><span class="customRadioBtn sizeSm primary "><input type="radio" value=""><span class="outer "><span
+                  class="inner"></span></span></span></div>
+          <div>
+            <div class="" style="color: rgb(74, 74, 74);">Armed Forces</div>
+            <div class="" style="color: rgb(117, 117, 117);">up to
+              ₹600 off</div>
+          </div>
+        </div>
+        <div class="fare-card-item">
+          <div><span class="customRadioBtn sizeSm primary "><input type="radio" value=""><span class="outer "><span
+                  class="inner"></span></span></span></div>
+          <div>
+            <div class="" style="color: rgb(74, 74, 74);">Doctor and Nurses</div>
+            <div class="" style="color: rgb(117, 117, 117);">up to
+              ₹600 off</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <button type="submit" class="flight-search" routerLink="/flight">Search</button>
+    </div>
+  </div>
+</form>
+
+<!--Mobile-view-->
+<div class="ts-m-hotelsearch-section top-70">
+  <div class="ts-back-home" routerLink="/">
+    <span class="material-symbols-outlined">
+      arrow_back
+      </span> Back to Home
+  </div>  
+  <div class="ts-hotel-search-map-row">
+
+    <div class="choose-flight-option">
+      <div>
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+          <label class="btn btn-outline-primary" for="option1">One Way</label>
+
+          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+          <label class="btn btn-outline-primary" for="option2">Round trip</label>
+
+          <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+          <label class="btn btn-outline-primary" for="option3">Multi city</label>
+        </div>
+      </div>
+      <div class="notes">Book International and Domestic Flights</div>
+    </div>
+
+     <div class="ts-hotel-choose-date">        
+      <div class="d-flex flex-column" data-bs-toggle="modal" data-bs-target="#whereToModal">
+        <label>From</label>
+        <span class="fw-semibold">Delhi</span>
+      </div>
+      <div class="selected-date">
+        <span class="material-symbols-outlined">
+            swap_horiz
+          </span>
+        </div>
+      <div class="d-flex flex-column" data-bs-toggle="modal" data-bs-target="#whereToModal">
+        <label>To</label>
+        <span class="fw-semibold">Mumbi</span>
+      </div>        
+    </div>
+
+     <div class="ts-hotel-choose-date">        
+       <div class="d-flex flex-column" data-bs-toggle="modal" data-bs-target="#checkInModal">
+         <label>Departure</label>
+         <span class="fw-semibold">Mon, 20 Sep</span>
+       </div>       
+       <div class="d-flex flex-column" data-bs-toggle="modal" data-bs-target="#checkOutModal">
+         <label>Returns</label>
+         <span class="fw-semibold">Mon, 21 Sep</span>
+       </div>        
+     </div>
+     <div class="ts-selected-room" data-bs-toggle="modal" data-bs-target="#roomGuestsModal">
+       <label>Traveller & class</label>
+       <p>1 Room, 2 Adults</p>
+     </div>
+
+     <div class="fare-options-container">
+      <label class="fare-options-label">Select a special fare</label>
+      <div class="fare-options-list">
+        <div
+          *ngFor="let fare of fareOptions"
+          (click)="selectFare(fare)"
+          [ngClass]="{'fare-option-item--selected': selectedFare === fare.type}"
+          class="fare-option-item"
+        >
+          <div class="fare-option-radio">
+            <input type="radio" [value]="fare.type" [(ngModel)]="selectedFare" />
+          </div>
+          <div class="fare-option-details">
+            <div class="fare-option-title">{{ fare.type }}</div>
+            <div class="fare-option-description">{{ fare.description }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+
+     <div class="">
+       <button class="ts-search-btn">Search</button>
+     </div>
+  </div> 
+</div>
+
+
+<!-- Modals -->
+<div class="modal fade" id="whereToModal" tabindex="-1" aria-labelledby="whereToModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="whereToModalLabel">
+          <span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> Where to?</h5>        
+      </div>
+      <div class="modal-body">
+        <!-- Sticky search input -->
+        <div class="sticky-top bg-white ">
+          <input type="text" class="form-control" placeholder="Search for a city..." [(ngModel)]="searchQuery">
+        </div>
+        List of cities
+        <div class="list-group">
+          <a *ngFor="let city of filteredCitiess()" href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+            <img [src]="city.image" alt="{{ city.name }}" class="me-3 rounded-circle" style="width:40px; height:40px;">
+            <span class="city-name">{{ city.name }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="checkInModal" tabindex="-1" aria-labelledby="checkInModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkInModalLabel"><span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> Check-in</h5>        
+      </div>
+      <div class="modal-body">
+        <!-- Content for Check-in -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="checkOutModal" tabindex="-1" aria-labelledby="checkOutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkOutModalLabel">
+          <span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> Check-out</h5>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="roomGuestsModal" tabindex="-1" aria-labelledby="roomGuestsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="roomGuestsModalLabel"><span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> Traveller & guests</h5>
+      </div>
+      <div class="modal-body">
+      
+        <div *ngFor="let room of rooms; let i = index" class="select-room-with-guests">
+          <div class="room-label">
+            Room {{ i + 1 }}
+          </div>
+          <div class="choose-adult-children">
+            <div class="choose-adults">
+              <div class="d-flex flex-column">
+                <span>Adults</span>
+                <label>12+ Years</label>
+              </div>
+              <div class="choose-quantative">
+                <span>-</span>
+                2
+                <span>+</span>
+              </div>
+            </div>
+            <div class="children-adults">
+              <div class="d-flex flex-column">
+                <span>Children</span>
+                <label>2-12 Years</label>
+              </div>
+              <div class="choose-quantative">
+                <span>-</span>
+                0
+                <span>+</span>
+              </div>
+            </div>
+            <div class="children-adults">
+              <div class="d-flex flex-column">
+                <span>Infrant</span>
+                <label>0-2 Years</label>
+              </div>
+              <div class="choose-quantative">
+                <span>-</span>
+                0
+                <span>+</span>
+              </div>
+            </div>
+            <button *ngIf="rooms.length > 1" class="remove-room" (click)="removeRoom(i)"><span
+                class="material-symbols-outlined">
+                close
+              </span></button>
+          </div>
+        </div>
+        
+        <div class="col-sm-12 choose-travel-class"><label>CHOOSE TRAVEL CLASS</label><ul><li>Economy/Premium Economy</li><li class="selected">Premium Economy</li><li>Business</li><li>First Class</li></ul></div>
+
+      </div>
+    </div>
+  </div>
+</div>

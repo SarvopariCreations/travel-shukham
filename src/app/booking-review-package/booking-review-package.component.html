@@ -1,0 +1,755 @@
+<app-header></app-header>
+
+<div class="package-review-wrap top-70">
+  <div class="package-review-section">
+    <div class="container">
+      <ul>
+        <li *ngFor="let tab of tabs; let i = index">
+          <a 
+            href="javascript:void(0);" 
+            [class.active]="activeTab === i"
+            (click)="selectTab(i)"
+          >
+            {{ tab.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="trip-summary-tab mt-4 mt-sm-5">
+    <div class="container">
+      <div class="col-sm-8 m-auto">
+        <div class="important-notes" *ngIf="activeTab === 0">
+          <div class="col-sm-12">
+            <h4>Important Holiday Plan Updates</h4>
+            <p>It will only take 2 minutes of your time.</p>
+          </div>
+          <div class="col-sm-12">
+            <div class="overview-section">
+              <h5>Overview</h5>
+              <div class="overview-table">
+                <div class="list-of">
+                  <div class="title">Visiting:</div>
+                  <div class="detl">Romantic Bali Getaway: Ubud, Kuta & Timeless Adventures</div>
+                </div>
+                <div class="list-of">
+                  <div class="title">Departing:</div>
+                  <div class="detl">November 30, 2024 from Bengaluru</div>
+                </div>
+                <div class="list-of">
+                  <div class="title">Inclusions:</div>
+                  <div class="detl">2 Hotels, 2 Transfers, 3 Activities, 1 Visa, 1 Insurance </div>
+                </div>
+                <div class="list-of">
+                  <div class="title">Travellers:</div>
+                  <div class="detl">2 adults</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <h5>Day Wise Summary</h5>
+              <div class="list-day-wise">
+                <div class="list-of">
+                  <div class="day-wise">Day 1</div>
+                  <div class="detl"> Morning &#64; Arrive into Denpasar Bali and get transferred to your hotel. Rest of
+                    the day at leisure. , Noon to evening &rarr; At Leisure.</div>
+                </div>
+                <div class="list-of">
+                  <div class="day-wise">Day 2</div>
+                  <div class="detl"> Full day &rarr; Ubud Wonders: Visit Volcano, Waterfalls, Rice Fields, Monkeys &
+                    Exhilarating Swing Thrills & Open Jeep Volkswagen tour.</div>
+                </div>
+                <div class="list-of">
+                  <div class="day-wise">Day 3</div>
+                  <div class="detl">Full day &rarr; Iconic Bali Experience: Handara Gate, Tanah Lot Temple.</div>
+                </div>
+                <div class="list-of">
+                  <div class="day-wise">Day 4</div>
+                  <div class="detl">Full day &rarr; West Nusa Penida (Angle Billabong, Crystal Bay, Broken Beach,
+                    Kelingking
+                    Beach).</div>
+                </div>
+                <div class="list-of">
+                  <div class="day-wise">Day 5</div>
+                  <div class="detl">Full day &rarr; At Leisure.</div>
+                </div>
+                <div class="list-of">
+                  <div class="day-wise">Day 6</div>
+                  <div class="detl">Morning &rarr; At Leisure , Noon to evening &rarr; Checkout of hotel and take your
+                    flight
+                    back home.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <h5>Known Alerts</h5>
+              <div class="list-day-wise">
+                <div class="list-of">
+                  <div class="known-days"><span class="material-symbols-outlined">
+                      home
+                    </span> 2N in Ubud &#64; Danakha Villa Ubud</div>
+                  <div class="detl">
+                    <ul>
+                      <li>
+                        The Danakha Villa Ubud in Ubud does not have an elevator
+                      </li>
+                      <li>
+                        Hotels may charge a caution deposit on your credit card. It will be refunded within 10-15 days
+                        if there is no property damage.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="list-of">
+                  <div class="known-days"><span class="material-symbols-outlined">
+                      home
+                    </span> 2N in Ubud &#64; Danakha Villa Ubud</div>
+                  <div class="detl">
+                    <ul>
+                      <li>
+                        Hotels may charge a caution deposit on your credit card. It will be refunded within 10-15 days
+                        if there is no property damage.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="notes">
+                Why alerts are crucial: These breaks could make or break your trip. It's important that you address them
+                while planning your trip. Discuss with your Trip Advisor Sunita pandey regarding these
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <h5>Cancellation Policy</h5>
+
+              <div class="calulation-list mt-3">
+                <div class="d-flex b-row">
+                  <span>TIME OF CANCELLATION</span>
+                  <span>CANCELLATION FEE</span>
+                </div>
+                <div class="d-flex flex-row f-row">
+                  <span>12 Nov - 14 Nov</span>
+                  <span>₹32,180</span>
+                </div>
+                <div class="d-flex flex-row f-row">
+                  <span>15 Nov - 30 Nov</span>
+                  <span>₹69,549</span>
+                </div>
+              </div>
+
+              <div class="col-sm-12 mt-3 mt-sm-4">
+                Total vacation cost: <strong>₹69,549,</strong> TCS: <strong>₹3,478</strong>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <h5>Payment terms</h5>
+              <div class="col-sm-12">
+                <div class="d-flex flex-row justify-content-between align-items-center gap-3 gap-sm-0">
+                  <span>Total cost includes TCS and taxes dated on 13 Nov, 2024</span>
+                  <strong class="fs-3">₹73,027</strong>
+                </div>
+              </div>
+              <div class="calulation-list mt-3">
+                <div class="d-flex b-row">
+                  <span>DATE</span>
+                  <span>AMOUNT</span>
+                </div>
+                <div class="d-flex flex-row f-row">
+                  <span>Before 13 Nov 2024</span>
+                  <span>Pay ₹73,027</span>
+                </div>
+              </div>
+
+              <div class="col-sm-12 mt-3 mt-sm-4">
+                Total vacation cost: <strong>₹69,549,</strong> TCS: <strong>₹3,478</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="acknowledge-text">
+              <div class="form-check">
+                <input class="form-check-input custom-checkbox" type="checkbox" value="" id="customCheckbox">
+                <label class="form-check-label" for="customCheckbox">
+                  I acknowledge that I have fully read and agree upon the alerts, cancellation and payment terms
+                  mentioned above.
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 mt-3 mt-sm-4 mb-5 flex-row gap-4 justify-content-between d-flex align-items-center">
+            <button class="back-btn">Back to itinerary</button>
+            <button class="continue-btn">Continue</button>
+          </div>
+        </div>
+
+        <div class="important-notes" *ngIf="activeTab === 1">
+          <div class="col-sm-12">
+            <h4>Enter Passenger Details</h4>
+            <p>It will only take 2 minutes of your time.</p>
+          </div>
+
+          <div class="autofill-hint-section">
+            <span class="material-symbols-outlined close-i">
+              close
+            </span>
+            <div class="d-flex flex-row gap-3">
+              <span class="material-symbols-outlined">
+                upload
+              </span>
+              <div class="d-flex flex-column">
+                <h5>Introducing Autofill</h5>
+                <p>Upload the front side of your passport and let us do the magic Make sure your photos aren’t blurry
+                  and the front of your identity card clearly shows your face and details.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-row ref--img">
+              <img src="../../assets/blog-img.jpg">
+              <img src="../../assets/blog-img.jpg">
+              <img src="../../assets/blog-img.jpg">
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="d-flex justify-content-between py-3 px-0">
+              <div>Room 1</div>
+              <div>Enter details for 2 adults</div>
+            </div>
+            <div class="overview-section">
+              <div class="col-sm-12 d-flex flex-row justify-content-between">
+                <div><strong>Adults 01</strong><label class="px-3 text-dark">Primary Contact</label></div>
+                <div class="dropdown">Select person</div>
+              </div>
+
+              <div class="choose-option-area d-flex flex-row justify-content-between mt-3 align-items-center">
+                <div class="autofill-detail">
+                  <span class="material-symbols-outlined">
+                    upload
+                  </span>
+                  <span class="d-flex flex-column">
+                    <strong>Upload Passport front</strong>
+                    <a href="#">Autofill your details</a>
+                  </span>
+                </div>
+                <div>OR</div>
+                <div class="autofill-detail">
+                  <span class="material-symbols-outlined">
+                    edit_note
+                  </span>
+                  <span class="d-flex flex-column">
+                    <strong>Enter details manually</strong>
+                    <a href="#">click here to type</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <div class="col-sm-12 d-flex flex-row justify-content-between">
+                <div><strong>Adults 02</strong> <label class="px-3 text-dark">Primary Contact</label></div>
+                <div class="dropdown">Select person</div>
+              </div>
+
+              <div class="choose-option-area d-flex flex-row justify-content-between mt-3 align-items-center">
+                <div class="autofill-detail">
+                  <span class="material-symbols-outlined">
+                    upload
+                  </span>
+                  <span class="d-flex flex-column">
+                    <strong>Upload Passport front</strong>
+                    <a href="#">Autofill your details</a>
+                  </span>
+                </div>
+                <div>OR</div>
+                <div class="autofill-detail">
+                  <span class="material-symbols-outlined">
+                    edit_note
+                  </span>
+                  <span class="d-flex flex-column">
+                    <strong>Enter details manually</strong>
+                    <a href="#">click here to type</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="overview-section">
+              <div class="col-sm-12 d-flex flex-row justify-content-between">
+                <div><strong>Child 01</strong> <label class="px-3 text-dark">Primary Contact</label></div>
+                <div class="dropdown">Select person</div>
+              </div>
+              <div class="upload-front px-2 py-2 rounded-2 gap-3 mt-3">
+                <span class="material-symbols-outlined">
+                  upload
+                </span> <span>To autofill details <a href="#" class="mx-2">passport front</a></span>
+              </div>
+
+              <div class="specific-user-detail">
+                <div class="col-sm-12">
+                  <div class="row mt-0 mt-sm-3">
+                    <div class="col-sm-2">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="1">Mr.</option>
+                        <option value="2">Mrs</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Given name">
+                    </div>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Sirname">
+                    </div>
+                  </div>
+                  <div class="row  mt-0 mt-sm-3">
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Date of Birth">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Passport Number">
+                    </div>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Expire Date">
+                    </div>
+                  </div>
+                  <div class="row mt-0 mt-sm-3">
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="PAN Number">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 mt-3 mt-sm-4">
+                <label class="fw-medium">Meal Preferences</label>
+                <div class="d-flex flex-row gap-3 mt-2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Veg
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Non Veg
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-12 mt-3 mt-sm-4">
+                <div class="d-flex flex-row justify-content-between">
+                  <label class="fw-medium">Upload Documents</label>
+                  <a href="#">Document format?</a>
+                </div>
+                <div class="col-sm-12 mt-3 mt-sm-4">
+                  <div class="w-100 d-flex flex-column flex-sm-row gap-3">
+                    <div class="d-flex flex-row gap-3 align-items-center filled-bx">
+                      <span class="material-symbols-outlined">
+                        task_alt
+                      </span>
+                      <div class="d-flex flex-column">
+                        <label>Passport Front</label>
+                        <span>Re-Upload Passport Front</span>
+                      </div>
+                      <span class="material-symbols-outlined">
+                        delete
+                      </span>
+                    </div>
+
+                    <div class="d-flex flex-row gap-3 align-items-center filled-bx">
+                      <span class="material-symbols-outlined">
+                        task_alt
+                      </span>
+                      <div class="d-flex flex-column">
+                        <label>Passport Front</label>
+                        <span>Re-Upload Passport Front</span>
+                      </div>
+                      <span class="material-symbols-outlined">
+                        delete
+                      </span>
+                    </div>
+
+                    <div class="d-flex flex-row gap-3 align-items-center filled-bx">
+                      <span class="material-symbols-outlined">
+                        task_alt
+                      </span>
+                      <div class="d-flex flex-column">
+                        <label>Upload PAN Card</label>
+                        <span>PDF, png or jpg</span>
+                      </div>
+                      <span class="material-symbols-outlined">
+                        delete
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="acknowledge-text">
+              <div class="form-check">
+                <input class="form-check-input custom-checkbox" type="checkbox" value="" id="customCheckbox1">
+                <label class="form-check-label" for="customCheckbox1">
+                  I hereby confirm that the above information is correct
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-12 mt-3 mt-sm-4 mb-5 flex-row gap-4 justify-content-between d-flex align-items-center">
+              <button class="back-btn">Back to Trip summary</button>
+              <button class="continue-btn">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="important-notes" *ngIf="activeTab === 2">
+          <div class="col-sm-12">
+            <h4>TCS (Tax Collected at Source) consent</h4>
+          </div>
+
+          <div class="seperate-cost-bx">
+            <div class="user-wise-tax">
+              Adult 01 <span><span class="material-symbols-outlined">
+                  door_sensor
+                </span> Room1 </span>
+            </div>
+            <div class="pan-card-link">
+              <label>Pan Number</label>
+              <input type="text" class="form-control">
+            </div>
+
+            <div class="overview-split-cost mt-4">
+              <div><span>Pro rata split of package cost</span> <strong>₹109,506</strong></div>
+              <div><span>TCS of 1st slab (5%)</span> <strong>₹5,476</strong></div>
+              <div><span>Amount payable for this PAN</span> <strong>₹114,982</strong></div>
+            </div>
+
+            <div class="terms-text">
+              <div class="acknowledge-text">
+                <div class="form-check">
+                  <input class="form-check-input custom-checkbox" type="checkbox" value="" id="customCheckbox2">
+                  <label class="form-check-label" for="customCheckbox2">
+                    I hereby declare that I fall under the 5% TCS bracket as per <a href="#">1G of section 206</a> of
+                    the IT Act
+                    2023 and agree to the <a href="#">Terms and Conditions</a> of Pickyourtrail.
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="add-new- mt-3">
+            <span class="material-symbols-outlined add-i">
+              add_circle
+            </span> <a href="#">Add PAN for Adults 02</a> <span class="material-symbols-outlined dor-i">
+              door_sensor
+            </span> Room1
+          </div>
+
+          <div class="total-cost-bill">
+            <div class="d-flex flex-row">
+              <label>Total Payable Amount: <strong>₹229,964</strong></label>
+            </div>
+            <a href="#">View Split price >></a>
+          </div>
+          <div class="col-sm-12 mt-3 mt-sm-4 mb-5 flex-row gap-4 justify-content-between d-flex align-items-center">
+            <button class="back-btn">Back to itinerary</button>
+            <button class="continue-btn">Continue</button>
+          </div>
+        </div>
+
+        <div class="important-notes review-cost-content" *ngIf="activeTab === 3">
+          <div class="col-sm-12">
+            <label>Total cost</label>
+            <h4>₹173,182</h4>
+          </div>
+          <div class="review-other-booking">
+            <a href="#">Review other unchanged bookings <span>1</span></a>
+          </div>
+          <div class="view-less-booking mt-3">
+            <h5>View less bookings</h5>
+            <div class="col-sm-12 d-flex flex-row py-4 px-3">
+              <div class="d-flex flex-row col-sm-6 left align-items-start gap-2">
+                <div>
+                  <span class="material-symbols-outlined">
+                    meeting_room
+                  </span>
+                </div>
+                <div class="d-flex flex-column align-items-start">
+                  <label>Maldivs</label>
+                  <span>Adaaran Select Hunduran Fushi</span>
+                </div>
+              </div>
+              <div class="d-flex flex-column col-sm-6 right align-items-start">
+                <label>Apr 25 - Apr 29</label>
+                <label>2 adults one room</label>
+              </div>
+            </div>
+          </div>
+          <div class="apply-discount-section mt-4">
+            <a href="#">
+              <span class="material-symbols-outlined">
+                loyalty
+              </span> Apply discount / referral coupon >
+            </a>
+            <div class="apply-input-box mt-3">
+              <input type="text" class="form-control" placeholder="Enter coupon code"> <button>Apply</button>
+            </div>
+          </div>
+
+          <div class="addon-section mt-4">
+            <h3 class="d-flex">Addon</h3>
+            <div class="h-section">
+              <div class="col-sm-4 overflow-hidden img-b">
+                <img src="../../assets/img1.webp" alt="">
+              </div>
+              <div class="col-sm-8 related-cont">
+                <div class="inner-d">
+                  <h4>Hotel Addon</h4>
+                  <span>Danakha Villa Ubud</span>
+                  <div class="room-label"><label>Room:</label> One Bedroom Pool Villa</div>
+                </div>
+
+                <div class="add-itinerary-sec">
+                  <strong>₹173,182</strong>
+                  <button><span class="material-symbols-outlined">
+                      add
+                    </span> Add to itinerary</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-section">
+              <div class="col-sm-4 overflow-hidden img-b">
+                <img src="../../assets/img1.webp" alt="">
+              </div>
+              <div class="col-sm-8 related-cont">
+                <div class="inner-d">
+                  <h4>Hotel Addon</h4>
+                  <span>Danakha Villa Ubud</span>
+                  <div class="room-label"><label>Room:</label> One Bedroom Pool Villa</div>
+                </div>
+
+                <div class="add-itinerary-sec">
+                  <strong>₹173,182</strong>
+                  <button><span class="material-symbols-outlined">
+                      add
+                    </span> Add to itinerary</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-section">
+              <div class="col-sm-4 overflow-hidden img-b">
+                <img src="../../assets/img1.webp" alt="">
+              </div>
+              <div class="col-sm-8 related-cont">
+                <div class="inner-d">
+                  <h4>Hotel Addon</h4>
+                  <span>Danakha Villa Ubud</span>
+                  <div class="room-label"><label>Room:</label> One Bedroom Pool Villa</div>
+                </div>
+
+                <div class="add-itinerary-sec">
+                  <strong>₹173,182</strong>
+                  <button><span class="material-symbols-outlined">
+                      add
+                    </span> Add to itinerary</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 mt-3 mt-sm-4">
+            <div class="acknowledge-text">
+              <div class="form-check">
+                <input class="form-check-input custom-checkbox" type="checkbox" value="" id="customCheckbox1">
+                <label class="form-check-label" for="customCheckbox1">
+                  I hereby confirm that the above information is correct
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-12 mt-3 mt-sm-4 mb-5 flex-row gap-4 justify-content-between d-flex align-items-center">
+              <button class="back-btn">Back to Trip summary</button>
+              <button class="continue-btn">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="make-payment-option mb-4" *ngIf="activeTab === 4">
+          <div class="col-sm-12">
+            <h4>You are one step away from your dream destination.</h4>
+          </div>
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="payment-option-section">
+                  <h5>Payment options</h5>
+                  <div class="choose-option mt-3">
+                    <div class="d-flex w-100 flex-column">
+                      <div class="form-check d-flex flex-row w-100 gap-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault11">
+                        <label class="form-check-label d-flex flex-row w-100" for="flexRadioDefault11">
+                          <div>
+                            <span>Pay Full Amount</span>
+                            <p class="mb-0">Pay fully and relax-leave the rest to us!</p>
+                          </div>
+                          <div class="d-flex to-pay">
+                            <label>To Pay</label>
+                            <strong>₹17,319</strong>
+                          </div>
+                        </label>
+                      </div>
+
+                      <div class="payment-via-option">
+                        <div class="each-option">
+                          <span class="material-symbols-outlined h-icon">
+                            account_balance
+                          </span>
+                          <div class="d-flex flex-column">
+                            <label>NET Banking, UPI</label>
+                            <span class="additional-text">Zero additional cost</span>
+                          </div>
+                          <span class="material-symbols-outlined forward-i">
+                            arrow_circle_right
+                          </span>
+                        </div>
+
+                        <div class="each-option">
+                          <span class="material-symbols-outlined h-icon">
+                            account_balance
+                          </span>
+                          <div class="d-flex flex-column">
+                            <label>Credit card, EMI and Wallets</label>
+                            <span class="additional-text">Surcharge upto 1.5%</span>
+                          </div>
+                          <span class="material-symbols-outlined forward-i">
+                            arrow_circle_right
+                          </span>
+                        </div>
+
+                        <div class="each-option">
+                          <span class="material-symbols-outlined h-icon">
+                            account_balance
+                          </span>
+                          <div class="d-flex flex-column">
+                            <label>Debit card</label>
+                            <span class="additional-text">Surcharge upto 0.5%</span>
+                          </div>
+                          <span class="material-symbols-outlined forward-i">
+                            arrow_circle_right
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="d-flex flex-row justify-content-between ms-3 my-3">
+                        <div class="d-flex flex-row align-items-center gap-2">
+                          <span class="material-symbols-outlined forward-i">
+                            arrow_circle_right
+                          </span> Secure Payment
+                        </div>
+                        <div>
+                          <span class="material-symbols-outlined forward-i">
+                            arrow_circle_right
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex w-100">
+                      <div class="form-check d-flex flex-row w-100 gap-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault13">
+                        <label class="form-check-label d-flex flex-row w-100" for="flexRadioDefault13">
+                          <div>
+                            <span>Pay minimum Amount</span>
+                            <p class="mb-0">Secure your booking now with a minimal upfront payment!</p>
+                          </div>
+                          <div class="d-flex to-pay">
+                            <label>To Pay</label>
+                            <strong>₹17,319</strong>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex w-100">
+                      <div class="form-check d-flex flex-row w-100 gap-2">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault12">
+                        <label class="form-check-label d-flex flex-row w-100" for="flexRadioDefault12">
+                          <div>
+                            <span>Pay minimum Amount</span>
+                            <p class="mb-0">Secure your booking now with a minimal upfront payment!</p>
+                          </div>
+                          <div class="d-flex to-pay">
+                            <label>To Pay</label>
+                            <strong>₹17,319</strong>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="in-case-of-call d-flex flex-row align-items-center gap-2 mt-4 mb-4 mb-sm-0 py-3 px-3 bg-black text-white rounded-2">
+                  <span class="material-symbols-outlined forward-i">
+                    arrow_circle_right
+                  </span>
+                  In case of any doubt, Call us at <strong>+ 9426283050</strong>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selected-package-view">
+                  <div class="col-sm-12 d-flex flex-row gap-2">
+                    <div class="avtar-img">
+                      <img src="../../assets/travel-5.webp">
+                    </div>
+                    <div class="location-name-dtl">
+                      <h5>Romantic Bali Getaway</h5>
+                      <label>Nov 30 . BLR . 2 Aduilts . 1 Room</label>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="price-detail-overview">
+                    <h6>Price Details</h6>
+                    <div class="d-flex flex-row justify-content-between mb-2">
+                      <div>Vacation Price</div>
+                      <div>₹10,319</div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between mb-2">
+                      <div>TCS</div>
+                      <div>₹7,000</div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="d-flex flex-row justify-content-between mb-2">
+                    <div>Total Trip Cost</div>
+                    <div><strong>₹17,319</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

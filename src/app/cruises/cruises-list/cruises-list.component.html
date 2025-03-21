@@ -1,0 +1,305 @@
+<app-header></app-header>
+<div class="ts-cruise-bg d-none d-sm-flex">
+  <img src="../../../assets/cruse-bg.webp" alt="">
+</div>
+<div class="container py-4 white-bg z-1 position-relative top-70 d-none d-sm-flex flex-column">
+  <div class="filter-area mb-4">
+    <div class="search-area">
+      <input type="text" placeholder="search destination or place">
+      <div class="overlap-text">
+        <label>Where</label>
+        <span>Search Destination or place</span>
+      </div>
+    </div>
+    <div class="fix--overlap">
+      <label class="font14">When?</label>
+      <span class="font14 lh-sm">I'm flexible</span>
+    </div>
+    <button type="submit" class="common-search">Search</button>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <app-filter [filterData]="flightFilterData"></app-filter>
+    </div>
+    <div class="col-sm-9">
+      <div class="d-flex flex-row justify-content-between w-100 ts-hotel-search-map">
+        <h5 class="mb-4 text-white">Showing 65 offers</h5>
+        <div class="d-flex flex-row gap-3">
+          <div class="recommand-selection">
+            <div class="dropdown">
+              <button class="dropdown-toggle rounder-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Short: Recommended
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Recommended</a></li>
+                <li><a class="dropdown-item" href="#">Latest</a></li>
+                <li><a class="dropdown-item" href="#">Ending soon</a></li>
+                <li><a class="dropdown-item" href="#">Most inclusions</a></li>
+                <li><a class="dropdown-item" href="#">Best Value</a></li>
+                <li><a class="dropdown-item" href="#">Price (Lowest)</a></li>
+                <li><a class="dropdown-item" href="#">Price (Highest)</a></li>
+                <li><a class="dropdown-item" href="#">Customer Rating (Highest)</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Filter Button for Mobile Devices -->
+          <div class="d-flex d-sm-none filter-button ms-auto">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#filterModal">
+              <span class="material-symbols-outlined">
+                tune
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="list-of-package" *ngFor="let pkg of packages">
+        <div class="img-slide">
+          <app-slider [images]="imageSet3" [className]="class"></app-slider>
+        </div>
+        <div class="place-detail">
+          <div class="hotel-logo">
+            <img [src]="pkg.tourLogo" alt="Hotel Logo">
+          </div>
+          <h4>{{ pkg.title }}</h4>
+          <p>{{ pkg.description }}</p>
+          <div class="rating-start mt-3 text-center">
+            <span>{{ pkg.rating }}</span>
+            Very good <a href="#">{{ pkg.reviews }} reviews</a>
+          </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <div class="offer-price">
+              <label class="durations- d-flex align-items-center w-100 justify-content-center">
+                {{ pkg.duration }} nights from
+              </label>
+              <span class="approx-price">
+                <strong>₹{{ pkg.pricePerPerson}}</strong>
+                <label>/night</label>
+              </span>
+              <span class="room-capacity">{{ pkg.highlights }}</span>
+              <div class="value-offer">
+                Valued up to ₹{{ pkg.valuedPrice}}
+                <span class="discount-offer">-{{ pkg.discount }}%</span>
+              </div>
+            </div>
+          </div>
+          <button class="view-offer-btn mt-3 m-auto" routerLink="/cruise-detail">View Offer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Mobile-view-->
+<div class="d-flex flex-column d-sm-none top-70">
+<div class="ts-m-hotelsearch-section">
+  <div class="ts-back-home" routerLink="/"> 
+    <span class="material-symbols-outlined">
+      arrow_back
+      </span> Cruises
+  </div>
+  <div class="ts-hotel-search-map-row">
+     <div class="search-input-here-row" data-bs-toggle="modal" data-bs-target="#whereToModal">
+       <label>Where to?</label>        
+       <p>Search for Country</p>
+     </div>
+     <div class="ts-selected-room" data-bs-toggle="modal" data-bs-target="#checkInModal">
+       <label>When?</label>
+       <p>I'm Flexible</p>
+     </div>
+     <div class="">
+       <button class="ts-search-btn">Search</button>
+     </div>
+  </div> 
+</div>
+
+<div class="ts-list-of-hotel-row">
+  <h4>Showing Top exclusive offers</h4>
+  <div class="ts-hotel-list">
+    <div class="ts-hotel-list-item" *ngFor="let cruise of cruises" routerLink="/cruise-detail">
+      <div class="ts-hotel-list-img">
+        <img [src]="cruise.imgSrc" alt="">
+      </div>
+      <div class="ts-hotel-list-detail">
+        <h5 class="mb-0">{{ cruise.name }}</h5>
+        <p>{{ cruise.location }}</p>
+        <div class="ts-hotel-rating">
+          <span class="count-rating">{{ cruise.rating }}</span>
+          <span class="title">Very good</span>
+          <a href="#" class="total-review">({{ cruise.reviewCount }} reviews)</a>
+        </div>
+        <div class="ts-hotel-price">
+          <span class="price">₹ {{ cruise.price }}</span>
+          <span class="per-head">+ ₹{{ cruise.taxesAndFees }} taxes & fees / night</span>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-budget-offer-categories mobile-view">
+  <ul class="tab-selction">
+      <li (click)="onTabClick('offer')" [class.active]="activeTab === 'offer'">Package</li>
+      <li (click)="onTabClick('budget')" [class.active]="activeTab === 'budget'">Budget</li>
+  </ul>
+  <div class="tab-section-preview">
+      <div *ngIf="activeTab === 'offer'" class="tab-first">
+          <ul>
+              <li>
+                  <a target="_blank" class="w-100 offer-me">
+                      <img src="../../../assets/offer-img.avif" alt="Advertisement Image"
+                          class="advertisement-image img-fluid rounded-4" />
+                  </a>
+              </li>
+              <li>
+                  <a target="_blank" class="w-100 offer-me">
+                      <img src="../../../assets/offer-img1.avif" alt="Advertisement Image"
+                          class="advertisement-image img-fluid rounded-4" />
+                  </a>
+              </li>
+
+              <li>
+                  <a target="_blank" class="w-100 offer-me">
+                      <img src="../../../assets/offer-img.avif" alt="Advertisement Image"
+                          class="advertisement-image img-fluid rounded-4" />
+                  </a>
+              </li>
+              <li>
+                  <a target="_blank" class="w-100 offer-me">
+                      <img src="../../../assets/offer-img1.avif" alt="Advertisement Image"
+                          class="advertisement-image img-fluid rounded-4" />
+                  </a>
+              </li>
+
+          </ul>
+      </div>
+      <div *ngIf="activeTab === 'budget'" class="tab-first pe-0">
+          <app-budget-category></app-budget-category>
+      </div>
+  </div>
+</div>
+</div>
+<!-- Modals -->
+<div class="modal fade" id="whereToModal" tabindex="-1" aria-labelledby="whereToModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="whereToModalLabel">
+          <span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> Where to?</h5>        
+      </div>
+      <div class="modal-body">
+        <!-- Sticky search input -->
+        <div class="sticky-top bg-white ">
+          <input type="text" class="form-control" placeholder="Search for a city..." [(ngModel)]="searchQuery">
+        </div>
+        <!-- List of cities -->
+        <div class="list-group">
+          <a *ngFor="let city of filteredCities()" href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+            <img [src]="city.image" alt="{{ city.name }}" class="me-3 rounded-circle" style="width:40px; height:40px;">
+            <span class="city-name">{{ city.name }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="checkInModal" tabindex="-1" aria-labelledby="checkInModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkInModalLabel"><span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> When do you want to go?</h5>        
+      </div>
+      <div class="modal-body">
+        <ul class="tab-selction">
+          <li (click)="onSearchClick('flexible')" [class.active]="activeTab1 === 'flexible'">Flexible dates</li>
+          <li (click)="onSearchClick('anytime')" [class.active]="activeTab1 === 'anytime'">Anytime</li>
+      </ul>
+      <div class="tab-section-preview">
+          <div *ngIf="activeTab1 === 'flexible'" class="tab-first">
+            
+            <div class="how-long">
+              <h5>How Long?</h5>
+              <div class="choose-category">
+                  <button href="#">
+                      <label>Any Duration</label>
+                      <p>i'll Decide later</p>
+                  </button>
+                  <button href="#">
+                      <label>Short stay</label>
+                      <p>1 to 3 nights</p>
+                  </button>
+                  <button href="#">
+                      <label>Medium stay</label>
+                      <p>4 to 7 nights</p>
+                  </button>
+                  <button href="#">
+                      <label>Long stay</label>
+                      <p>8+ nights</p>
+                  </button>
+              </div>
+          </div>
+
+
+          <div class="how-long mt-3">
+            <h5>When?</h5>
+            <div class="choose-year">
+              <div class="year-selector">
+                <button (click)="decrementYear()" class="arrow-button" [disabled]="selectedYear <= currentYear"><span class="material-symbols-outlined">
+                  arrow_back_ios
+                  </span></button>
+                <span>{{ selectedYear }}</span>
+                <button (click)="incrementYear()" class="arrow-button"><span class="material-symbols-outlined">
+                  arrow_forward_ios
+                  </span></button>
+              </div>
+              
+              <div class="checkbox-container">
+                <label class="custom-button" *ngFor="let month of months">
+                  <span>
+                    <label>{{ month }}</label>
+                    <!-- <p>{{ selectedYear }}</p> -->
+                  </span>
+                  <input type="checkbox" class="custom-checkbox">
+                  <div class="bg"></div>
+                </label>
+              </div>
+            </div>
+        </div>        
+          </div>
+          <div *ngIf="activeTab1 === 'anytime'" class="tab-first pe-0">
+            Comming soon            
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="w-100 ts-footer-wrapper">
+  <app-footer></app-footer>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="filterModalLabel">Filter Options</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-filter [filterData]="flightFilterData"></app-filter>
+      </div>
+    </div>
+  </div>
+</div>

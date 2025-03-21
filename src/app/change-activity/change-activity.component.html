@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="activity-wrapper pb-5">
+    <div class="container">
+        <div class="col-sm-12 my-4 activity-search">
+            <div class="d-flex flex-row py-4 bg-black rounded-3 align-items-center justify-content-between px-3">
+            <div class="col-sm-4 text-white d-flex align-items-center gap-1"><span class="material-symbols-outlined">
+                keyboard_backspace
+                </span> Back to itinerary</div>            
+            <div class="col-sm-4">
+                <input type="search" placeholder="Find an activity" class="w-100">
+            </div>
+            <div class="col-sm-4 text-end d-flex align-items-center justify-content-end gap-1">
+                <a href="#" class="text-white text-decoration-none d-flex gap-1"><span class="material-symbols-outlined">
+                    tune
+                    </span> Price</a>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-md-3">
+                <div class="recommand-text mb-4">
+                    <span class="material-symbols-outlined">
+                        recommend
+                        </span> 
+                        TS Recommended
+                        <span class="material-symbols-outlined">
+                            help
+                        </span>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        </div>
+                </div>
+                <app-filter></app-filter>
+            </div>
+            <div class="col-sm-8 col-md-9">
+                <app-filter-listing></app-filter-listing>
+            </div>
+        </div>
+    </div>
+</div>

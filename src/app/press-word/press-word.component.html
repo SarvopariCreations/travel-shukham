@@ -1,0 +1,46 @@
+<div class="press-word">
+    <ul class="tab-header">
+        <li *ngFor="let tab of tabs; let i = index" (mouseover)="selectTab(i)" [class.active]="selectedTab === i">
+            <img [src]="tab.icon" alt="logo" class="img-fluid">
+        </li>
+    </ul>
+
+    <div class="col-sm-12">
+        <div *ngIf="selectedTab === 0">
+            <div class="press-comment">
+                <p><strong>“TravelSukham has helped book international vacations for over 10,000 travelers since
+                        2014”</strong></p>
+                <span>The Times of India Mar 04, 2019 <a href="#">Read more on The Your Story</a></span>
+            </div>
+        </div>
+
+        <div *ngIf="selectedTab === 1">
+            <div class="press-comment">
+                <p><strong>“TravelSukham has helped book international vacations for over 10,000 travelers since
+                        2014”</strong></p>
+                <span>The Times of India Mar 04, 2019 <a href="#">Read more on The Hindu</a></span>
+            </div>
+        </div>
+        <div *ngIf="selectedTab === 2">
+            <div class="press-comment">
+                <p><strong>“TravelSukham has helped book international vacations for over 10,000 travelers since
+                        2014”</strong></p>
+                <span>The Times of India Mar 04, 2019 <a href="#">Read more on The Nasscom</a></span>
+            </div>
+        </div>
+        <div *ngIf="selectedTab === 3">
+            <div class="press-comment">
+                <p><strong>“TravelSukham has helped book international vacations for over 10,000 travelers since
+                        2014”</strong></p>
+                <span>The Times of India Mar 04, 2019 <a href="#">Read more on The Economics Times</a></span>
+            </div>
+        </div>
+        <div *ngIf="selectedTab === 4">
+            <div class="press-comment">
+                <p><strong>“TravelSukham has helped book international vacations for over 10,000 travelers since
+                        2014”</strong></p>
+                <span>The Times of India Mar 04, 2019 <a href="#">Read more on The Times Of India</a></span>
+            </div>
+        </div>
+    </div>
+</div>

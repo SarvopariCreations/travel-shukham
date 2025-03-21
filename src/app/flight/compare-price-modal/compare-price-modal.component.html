@@ -1,0 +1,89 @@
+<div class="side-panel-controller">
+    <div class="side-panel-wrapper">
+        <div class="side-panel-top-section">
+            <h5 class="mb-0">3 FARE OPTIONS available for your trip.
+              <button class="close-icon" (click)="closeHotelModal()">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+            </button></h5>
+        </div>
+        <div class="trip-location-breadcumb">
+            <div class="location-from">
+                Mumbai<span class="material-symbols-outlined">
+                    keyboard_arrow_right
+                </span>Chennai
+                <img class="flight-row-airline-logo"
+                    src="https://imgak.mmtcdn.com/flights/assets/media/mobile/common/hdpi/AI.png?v7" alt="Airline">
+                <div>IndiGo</div>
+                <div>·</div>
+                <div>Fri, 13 Dec 24</div>
+                <div>·</div>
+                <div>Departure at 12:05</div>
+                <div>-</div>
+                <div>Arrival at 13:55</div>
+            </div>
+        </div>
+
+        <div class="list-of-price-compare mt-3">
+            <div class="fare-card-wrapper cta-wrapper" *ngFor="let card of fareCards">
+                <div class="ff-card-heading">
+                  <div class="ts-offer">
+                    <span class="material-symbols-outlined">verified</span>
+                    <div><b>{{ card.title }}</b></div>
+                  </div>
+                  <div class="slashed-price-sec">
+                    <div class="slashed-fare-with-tag mb-2">
+                      <span class="font18 fw-semibold">{{ card.fare }}</span>
+                      <span class="font12">per adult</span>
+                    </div>
+                    <p class="cap-text font12 mb-0">{{ card.fareBy }}</p>
+                  </div>
+                </div>
+                <div class="ff-card-body">
+                  <p><b>Baggage</b></p>
+                  <ul class="ff-card-list">
+                    <li *ngFor="let item of card.baggage">
+                      <span class="material-symbols-outlined font16">check</span>
+                      <span>{{ item }}</span>
+                    </li>
+                  </ul>
+                  <p><b>Flexibility</b></p>
+                  <ul class="ff-card-list">
+                    <li *ngFor="let item of card.flexibility">
+                      <span class="material-symbols-outlined font16" [innerHTML]="item.includes('starts') ? 'remove' : 'check'"></span>
+                      <span>{{ item }}</span>
+                    </li>
+                  </ul>
+                  <p><b>Seats, Meals & More</b></p>
+                  <ul class="ff-card-list">
+                    <li *ngFor="let item of card.seatsMeals">
+                      <span class="material-symbols-outlined font16">remove</span>
+                      <span>{{ item }}</span>
+                    </li>
+                  </ul>
+                  <div class="bottom-persuasions">
+                    <div>
+                      <div class="cap-text">
+                        BENEFITS WORTH <span style="color: #CF8100;">{{ card.benefits }}</span> INCLUDED
+                      </div>
+                    </div>
+                    <div class="off-benefit">
+                      <span
+                        class="bg-properties append-right-5 icon-14 no-sub-icon"
+                        style="background-image: url('https://imgak.mmtcdn.com/flights/assets/media/dt/listing/coupon-icons/ais_coupon.png');"
+                      ></span>
+                      {{ card.offer }}
+                    </div>
+                  </div>
+                </div>
+                <div class="ff-card-footer">
+                  <div class="cta-container">
+                    <button type="button" routerLink="/flight-review-details" (click)="closeHotelModal()">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+    </div>
+</div>

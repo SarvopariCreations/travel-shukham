@@ -1,0 +1,65 @@
+
+.payment-via-option
+{
+    width: calc(100% - 20px);
+    display: flex;
+    margin-left:20px;
+    border: 1px solid #c7c7c7;
+    border-radius: 6px;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    .each-option{
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        width: 100%;
+        gap: 1rem;
+        border-bottom: 1px dashed #c7c7c7;
+        align-items: center;
+        
+        .h-icon{
+            margin-top:5px;
+        }
+        .forward-i{
+            margin-left: auto;
+        }
+        .additional-text{
+            color: #eca846;
+        }
+
+        &:last-child{
+            border-bottom: 0px;
+        }
+    }
+}
+
+.payment-option-section{
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+}
+
+.selected-package-view{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 6px;
+
+    .avtar-img{
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .location-name-dtl{
+
+    }
+
+}

@@ -1,0 +1,388 @@
+<app-header></app-header>
+<div class="col-sm-12 d-flex flex-row border-bottom border-top py-4 px-3 gap-3 common-filter-map">
+
+    <div class="custom-rating-section">
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Custom Ratings
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#">Execeptional:  9.0+</a></li>
+                <li><a class="dropdown-item" href="#">Very Good: 8.0+</a></li>
+                <li><a class="dropdown-item" href="#">Good: 8.0+</a></li>
+                <li><a class="dropdown-item" href="#">Any Rating</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="custom-rating-section inclusion-filter">
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Inclusions
+            </button>
+            <ul class="dropdown-menu pe-0" aria-labelledby="dropdownMenuButton">       
+                <div class="scrollable">
+                    <h5>Inclusions</h5>
+                    <div *ngFor="let section of sections" class="mt-3">
+                        <h6>{{ section.header }}</h6>
+                        <!-- Inner loop for options within each section -->
+                        <li *ngFor="let option of section.options; let i = index">
+                          <div class="form-check">
+                            <input 
+                              class="form-check-input" 
+                              type="checkbox" 
+                              [value]="option.label" 
+                              [id]="section.header + '-checkbox' + i"
+                            >
+                            <label class="form-check-label" [for]="section.header + '-checkbox' + i">
+                              {{ option.label }}
+                              <span class="count">({{ option.count }})</span>
+                            </label>
+                          </div>
+                        </li> 
+                      </div>                    
+                </div>
+                <div class="filter-action-btn">
+                    <button class="btn-outline">Reset</button>                    
+                    <button class="btn-black">Apply</button>
+                </div>                             
+            </ul>        
+        </div>
+    </div>
+
+    <div class="custom-rating-section inclusion-filter">
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="multiCheckboxDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Types of escape
+            </button>
+            <ul class="dropdown-menu  pe-0" aria-labelledby="multiCheckboxDropdown">
+                <!-- Dropdown item with checkboxes -->
+                <div class="scrollable">
+                    <h5 class="mb-3">Type of escape</h5>
+                    <div>
+                        <li *ngFor="let option of options; let i = index">
+                            <div class="form-check">
+                              <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                [value]="option.label" 
+                                [id]="'checkbox' + i"
+                              >
+                              <label class="form-check-label" [for]="'checkbox' + i">
+                                {{ option.label }}
+                                <span class="count">({{ option.count }})</span>
+                              </label>
+                            </div>
+                          </li>               
+                </div>
+                </div>
+                <div class="filter-action-btn">
+                    <button class="btn-outline">Reset</button>                    
+                    <button class="btn-black">Apply</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="custom-rating-section inclusion-filter">
+        <div class="dropdown">
+            <button class="dropdown-toggle" type="button" id="multiCheckboxDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                Types of escape
+            </button>
+            <ul class="dropdown-menu  pe-0" aria-labelledby="multiCheckboxDropdown">
+                <!-- Dropdown item with checkboxes -->
+                <div class="scrollable">
+                    <h5>Type of escape</h5>
+                    <div>
+                        <li *ngFor="let option of amenities; let i = index">
+                            <div class="form-check">
+                              <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                [value]="option.label" 
+                                [id]="'checkbox' + i"
+                              >
+                              <label class="form-check-label" [for]="'checkbox' + i">
+                                {{ option.label }}
+                                <span class="count">({{ option.count }})</span>
+                              </label>
+                            </div>
+                          </li>               
+                </div>
+                </div>
+                <div class="filter-action-btn">
+                    <button class="btn-outline">Reset</button>                    
+                    <button class="btn-black">Apply</button>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="search-map-wrap">
+    <div class="col-sm-12 h-100">
+        <div class="column h-100 d-sm-row">
+            <div class="col-sm-12 col-md-7 col-lg-7 col-xxl-6 h-100 pe-0 m-list-of-search-map">
+                <div class="list-of-search-map common-filter-map">
+                    <div class="d-flex flex-row gap-3 justify-content-between align-items-center w-100 mb-3">
+                        <div>
+                            1294 offers found
+                        </div>
+                        <div class="recommand-selection">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Short: Recommended
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li><a class="dropdown-item" href="#">Recommended</a></li>
+                                    <li><a class="dropdown-item" href="#">Latest</a></li>
+                                    <li><a class="dropdown-item" href="#">Ending soon</a></li>
+                                    <li><a class="dropdown-item" href="#">Most inclusions</a></li>
+                                    <li><a class="dropdown-item" href="#">Best Value</a></li>
+                                    <li><a class="dropdown-item" href="#">Price (Lowest)</a></li>
+                                    <li><a class="dropdown-item" href="#">Price (Highest)</a></li>
+                                    <li><a class="dropdown-item" href="#">Customer Rating (Highest)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-of-package">
+                        <div class="img-slide">
+                            <app-slider [images]="imageSet3" [className]="class"></app-slider>
+                        </div>
+                        <div class="map-place-detail">
+                            <div class="rating-favorite-section">
+                                <div class="rating-start text-center"><span>8.0</span>
+                                    Very good <a href="#">118 review </a></div>
+                                <div class="favorite-save">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                    Save
+                                </div>
+                            </div>
+                            <div class="location"><span class="material-symbols-outlined">
+                                    location_on
+                                </span> Dubai, United Arab Emirates</div>
+                            <div class="hotel-name">
+                                <h4>JEN Singapore Orchardgateway by Shangri-La</h4>
+                            </div>
+
+                            <div class="highlight-detail">
+                                <div class="inlcusion-items">
+                                    <label class="inclusion-header">Handpicked Inclusions:</label>
+                                    <div><span class="material-symbols-outlined">
+                                            local_cafe
+                                        </span> Daily buffet breakfast</div>
+                                    <div><span class="material-symbols-outlined">
+                                            chair
+                                        </span>Daily Club Lounge access with light dinner and free-flow drinks hours
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            wine_bar
+                                        </span>One-time drink per adult at Eve Penthouse & Lounge
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            schedule
+                                        </span>Late 2pm checkout, subject to availability
+                                    </div>
+                                </div>
+                                <div class="offer-price">
+                                    <label class="durations- d-flex">3
+                                        nights
+                                        from</label>
+                                    <span class="approx-price"><strong>₹1,66,744</strong><label>/night</label></span>
+                                    <span class="room-capacity">Twin room</span>
+                                    <div class="value-offer">Valued up to ₹1,99,771 <span
+                                            class="discount-offer">-17%</span>
+                                    </div>
+                                    <a href="#" class="fw-normal text-black fs-6 mb-0">Price Details</a>
+                                    <button class="view-offer-btn mt-2">View Offer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-of-package">
+                        <div class="img-slide">
+                            <app-slider [images]="imageSet3" [className]="class"></app-slider>
+                        </div>
+                        <div class="map-place-detail">
+                            <div class="rating-favorite-section">
+                                <div class="rating-start text-center"><span>8.0</span>
+                                    Very good <a href="#">118 review </a></div>
+                                <div class="favorite-save">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                    Save
+                                </div>
+                            </div>
+                            <div class="location"><span class="material-symbols-outlined">
+                                    location_on
+                                </span> Dubai, United Arab Emirates</div>
+                            <div class="hotel-name">
+                                <h4>JEN Singapore Orchardgateway by Shangri-La</h4>
+                            </div>
+
+                            <div class="highlight-detail">
+                                <div class="inlcusion-items">
+                                    <label class="inclusion-header">Handpicked Inclusions:</label>
+                                    <div><span class="material-symbols-outlined">
+                                            local_cafe
+                                        </span> Daily buffet breakfast</div>
+                                    <div><span class="material-symbols-outlined">
+                                            chair
+                                        </span>Daily Club Lounge access with light dinner and free-flow drinks hours
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            wine_bar
+                                        </span>One-time drink per adult at Eve Penthouse & Lounge
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            schedule
+                                        </span>Late 2pm checkout, subject to availability
+                                    </div>
+                                </div>
+                                <div class="offer-price">
+                                    <label class="durations- d-flex">3
+                                        nights
+                                        from</label>
+                                    <span class="approx-price"><strong>₹1,66,744</strong><label>/night</label></span>
+                                    <span class="room-capacity">Twin room</span>
+                                    <div class="value-offer">Valued up to ₹1,99,771 <span
+                                            class="discount-offer">-17%</span>
+                                    </div>
+                                    <a href="#" class="fw-normal text-black fs-6 mb-0">Price Details</a>
+                                    <button class="view-offer-btn mt-2">View Offer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-of-package">
+                        <div class="img-slide">
+                            <app-slider [images]="imageSet3" [className]="class"></app-slider>
+                        </div>
+                        <div class="map-place-detail">
+                            <div class="rating-favorite-section">
+                                <div class="rating-start text-center"><span>8.0</span>
+                                    Very good <a href="#">118 review </a></div>
+                                <div class="favorite-save">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                    Save
+                                </div>
+                            </div>
+                            <div class="location"><span class="material-symbols-outlined">
+                                    location_on
+                                </span> Dubai, United Arab Emirates</div>
+                            <div class="hotel-name">
+                                <h4>JEN Singapore Orchardgateway by Shangri-La</h4>
+                            </div>
+
+                            <div class="highlight-detail">
+                                <div class="inlcusion-items">
+                                    <label class="inclusion-header">Handpicked Inclusions:</label>
+                                    <div><span class="material-symbols-outlined">
+                                            local_cafe
+                                        </span> Daily buffet breakfast</div>
+                                    <div><span class="material-symbols-outlined">
+                                            chair
+                                        </span>Daily Club Lounge access with light dinner and free-flow drinks hours
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            wine_bar
+                                        </span>One-time drink per adult at Eve Penthouse & Lounge
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            schedule
+                                        </span>Late 2pm checkout, subject to availability
+                                    </div>
+                                </div>
+                                <div class="offer-price">
+                                    <label class="durations- d-flex">3
+                                        nights
+                                        from</label>
+                                    <span class="approx-price"><strong>₹1,66,744</strong><label>/night</label></span>
+                                    <span class="room-capacity">Twin room</span>
+                                    <div class="value-offer">Valued up to ₹1,99,771 <span
+                                            class="discount-offer">-17%</span>
+                                    </div>
+                                    <a href="#" class="fw-normal text-black fs-6 mb-0">Price Details</a>
+                                    <button class="view-offer-btn mt-2">View Offer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-of-package">
+                        <div class="img-slide">
+                            <app-slider [images]="imageSet3" [className]="class"></app-slider>
+                        </div>
+                        <div class="map-place-detail">
+                            <div class="rating-favorite-section">
+                                <div class="rating-start text-center"><span>8.0</span>
+                                    Very good <a href="#">118 review </a></div>
+                                <div class="favorite-save">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                    Save
+                                </div>
+                            </div>
+                            <div class="location"><span class="material-symbols-outlined">
+                                    location_on
+                                </span> Dubai, United Arab Emirates</div>
+                            <div class="hotel-name">
+                                <h4>JEN Singapore Orchardgateway by Shangri-La</h4>
+                            </div>
+
+                            <div class="highlight-detail">
+                                <div class="inlcusion-items">
+                                    <label class="inclusion-header">Handpicked Inclusions:</label>
+                                    <div><span class="material-symbols-outlined">
+                                            local_cafe
+                                        </span> Daily buffet breakfast</div>
+                                    <div><span class="material-symbols-outlined">
+                                            chair
+                                        </span>Daily Club Lounge access with light dinner and free-flow drinks hours
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            wine_bar
+                                        </span>One-time drink per adult at Eve Penthouse & Lounge
+                                    </div>
+                                    <div><span class="material-symbols-outlined">
+                                            schedule
+                                        </span>Late 2pm checkout, subject to availability
+                                    </div>
+                                </div>
+                                <div class="offer-price">
+                                    <label class="durations- d-flex">3
+                                        nights
+                                        from</label>
+                                    <span class="approx-price"><strong>₹1,66,744</strong><label>/night</label></span>
+                                    <span class="room-capacity">Twin room</span>
+                                    <div class="value-offer">Valued up to ₹1,99,771 <span
+                                            class="discount-offer">-17%</span>
+                                    </div>
+                                    <a href="#" class="fw-normal text-black fs-6 mb-0">Price Details</a>
+                                    <button class="view-offer-btn mt-2">View Offer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-5 col-xxl-6 h-100 px-0">
+                <div class="h-100">
+                    <div class="w-100 d-flex h-100"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps vehicle tracker</a></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

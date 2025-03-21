@@ -1,0 +1,24 @@
+@import url(../../../../src/app/common.scss);
+
+input{
+    padding-left: 1rem;
+    font-size: 15px;
+    font-weight: var(--tsukham-web-fontWeights-normal);
+    color: var(--tsukham-web-colors-grey12);
+    border-radius: var(--tsukham-web-radii-4);
+    height: 100%;
+    background-color: var(--tsukham-web-colors-white);
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: var(--tsukham-web-colors-grey02);
+    box-shadow: unset;
+    line-height: var(--tsukham-web-lineHeights-1);
+    height: 50px;
+
+    &:focus{
+        border: 1px solid black;
+        outline: none;
+        box-shadow: none;
+    }
+}

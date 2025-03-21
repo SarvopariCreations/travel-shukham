@@ -1,0 +1,300 @@
+
+<div class="filter-bar filter-activity">
+    <div class="applied-filter">
+        <h6>Applied Filters  <span class="clear-all font14">Clear all</span></h6>
+        <div class="added-filter">Depart from DEL 00:00 - 24:00 <span class="material-symbols-outlined font14">
+            cancel
+            </span>
+        </div>
+    </div>
+    <form>
+      <ng-container *ngFor="let filter of filterData">
+        <h6 class="my-3" (click)="toggleSection(filter.key)">
+          {{ filter.title }}
+          <span
+            class="material-symbols-outlined"
+            [ngClass]="{ 'rotate-arrow': isSectionOpen[filter.key] }"
+          >
+            keyboard_arrow_down
+          </span>
+        </h6>
+        <ul *ngIf="isSectionOpen[filter.key]">
+          <li *ngFor="let option of filter.options">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [value]="option.value"
+                [id]="option.id"
+              />
+              <label class="form-check-label" [for]="option.id">
+                {{ option.label }} 
+                <span>{{option.price}}</span>
+              </label>              
+            </div>
+          </li>
+        </ul>
+      </ng-container>
+      <div class="d-flex flex-column">
+        <h6 for="customRange1" class="form-label">One Way Price</h6>
+        <input type="range" class="form-range" id="customRange1">
+
+        <div class="range-values d-flex flex-row justify-content-between">
+            <span id="minValue">1</span>
+            <span id="maxValue">75</span>
+          </div>
+     </div>
+
+    </form>
+  </div>
+
+  
+
+
+<!-- <div class="filter-bar filter-activity">
+    <form>
+        <h6 class="my-3" (click)="toggleSection('timeSlot')">Customer Ratings<span class="material-symbols-outlined"
+                [ngClass]="{ 'rotate-arrow':isSectionOpen['timeSlot'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['timeSlot']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Exceptional: 9.0+
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Very Good: 8.0+
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Good: 7.0+
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <h6 class="my-3" (click)="toggleSection('activityDuration')">Type of escape<span
+                class="material-symbols-outlined" [ngClass]="{ 'rotate-arrow':isSectionOpen['activityDuration'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['activityDuration']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Homes & Villas
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        City Break
+                    </label>
+                </div>
+            </li>
+
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Sun & Beach
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Family Friendly
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Beutique
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Honeymoon
+                    </label>
+                </div>
+            </li>
+
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Group
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Wellness & Relaxation
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Outdoor Advanture
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+        <h6 class="my-3" (click)="toggleSection('Transfer')">Transfer <span class="material-symbols-outlined"
+                [ngClass]="{ 'rotate-arrow':isSectionOpen['Transfer'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['Transfer']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Inlcuded
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Not-Included
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+        <h6 class="my-3" (click)="toggleSection('groupType')">Group Type <span class="material-symbols-outlined"
+                [ngClass]="{ 'rotate-arrow':isSectionOpen['groupType'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['groupType']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Shared
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Private
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+        <h6 class="my-3" (click)="toggleSection('interests')">Interests <span class="material-symbols-outlined"
+                [ngClass]="{ 'rotate-arrow':isSectionOpen['interests'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['interests']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Advanture & Outdoor
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Art & culture
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Shopping & Leisure
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Food & Nightlife
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+        <h6 class="my-3" (click)="toggleSection('otherFilter')">Other Filters <span class="material-symbols-outlined"
+                [ngClass]="{ 'rotate-arrow':isSectionOpen['otherFilter'] }">
+                keyboard_arrow_down
+            </span></h6>
+        <ul *ngIf="isSectionOpen['otherFilter']">
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Top Hightlight
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Kid Friendly
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Fast Selling
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Less explored gems
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Self exploration
+                    </label>
+                </div>
+            </li>
+        </ul>
+
+    </form>
+</div> -->

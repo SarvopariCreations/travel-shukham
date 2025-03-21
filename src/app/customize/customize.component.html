@@ -1,0 +1,232 @@
+<div class="award-win">
+    <img src="../../assets/trophy.png" alt=""> LATEST: TravelSukham won India's Best International Holiday Brand!
+</div>
+
+<div class="mt-100" *ngIf="currentSection === 'first-section'" title="first section">
+    <div class="container-fluid customized-fuild">
+        <div class="container pt-3">
+            <div class="main-search-bar">
+                <div class="search-filter">
+                    <div class="search-bar w-100 gap-2">
+                        <div
+                            class="col-sm-12 container m-auto d-flex flex-row justify-content-between heading-of-search py-2">
+                            <div class="d-flex flex-content-start align-items-center me-1">
+                                <a href=" #">
+                                    <span class="material-symbols-outlined">
+                                        arrow_back_ios
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="heading ms-0 me-auto">
+                                <h5>What's your pick for your next vacation?</h5>
+                            </div>
+                            <div class="col-sm-2  d-flex justify-content-end align-items-center">
+                                <a href=" #">
+                                    <span class="material-symbols-outlined">
+                                        close
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="search-b">
+                            <input type="text" class="w-100 py-3 px-3 rounded-3" placeholder="Choose your destination">
+                            <span class="position-absolute"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                    class="PJLV PJLV-ijvuWzD-css">
+                                    <g clip-path="url(#prefix__clip0_327_16)">
+                                        <path fill-rule="evenodd"
+                                            d="M12 7A5 5 0 112 7a5 5 0 0110 0zm-2.197 5.306a6 6 0 11.846-.543l2.741 3.425a.5.5 0 01-.78.624l-2.807-3.506z"
+                                            clip-rule="evenodd"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="prefix__clip0_327_16">
+                                            <path d="M0 0h16v16H0z"></path>
+                                        </clipPath>
+                                    </defs>
+                                </svg></span>
+                        </div>
+                    </div>
+                    <div class="ts-place-list">
+                        <ul>
+                            <li><a (click)="showSection('second-section')">Maldives <span
+                                        class="special-place hanimoon">Hanimoon</span></a></li>
+                            <li><a (click)="showSection('second-section')">Bali <span
+                                        class="special-place tranding">Tranding</span></a></li>
+                            <li><a (click)="showSection('second-section')">Thailand <span
+                                        class="special-place budget">Budget</span></a></li>
+                            <li><a (click)="showSection('second-section')">Dubai <span
+                                        class="special-place popular">Popular</span></a></li>
+                            <li><a (click)="showSection('second-section')">Singapore <span
+                                        class="special-place in-season">In season</span></a></li>
+                            <li><a (click)="showSection('second-section')">Maldives</a></li>
+                            <li><a (click)="showSection('second-section')">Bali</a></li>
+                            <li><a (click)="showSection('second-section')">Thailand</a></li>
+                            <li><a (click)="showSection('second-section')">Dubai</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid custom-full-width" *ngIf="currentSection === 'second-section'" title="second-section">
+    <div class="custom-pick-your-package">
+        <div class="stapper-mask-section py-4">
+            <label class="mb-3 fw-bold">Now Planning your holiday TO</label>
+            <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex align-items-center justify-content-start gap-1 gap-sm-3 choose-package">
+                    <div class="selected-tag">
+                        Bali <button><span class="material-symbols-outlined">
+                                close
+                            </span></button>
+                    </div>
+                    <div class="selected-tag">
+                        7-9 Days
+                    </div>
+                    <div class="selected-tag">
+                        1 Pax, Room
+                    </div>
+                    <div class="selected-tag">
+                        2 Cities
+                    </div>
+                </div>
+                <div class="back-icon" (click)="openAddCityModel()">
+                    <button><span class="material-symbols-outlined">
+                            close
+                        </span></button>
+                </div>
+            </div>
+            <div class="selection-tour-progress">
+                <div class="active"><span class="step-count">1</span></div>
+                <div><span class="step-count">2</span> </div>
+                <div><span class="step-count">3</span></div>
+                <div><span class="step-count">4</span></div>
+                <div><span class="step-count">5</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose-package-option" title="travel-choose-categies" *ngIf="showTravelCategories">
+        <span class="d-flex text-center w-100 align-items-start justify-content-start fw-medium fs-5">What's the
+            duration of your holiday?
+        </span>
+        <div class="select-option">
+            <div class="travel-box" (click)="showSection1('app-travel-count')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined" style="color: #253394;">
+                        brightness_1
+                    </span>
+                </div>
+                <label>
+                    4-6 Days
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-travel-count')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined blue" style="color: #235fa8;">
+                        brightness_2
+                    </span>
+                </div>
+                <label>
+                    7-9 Days
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-travel-count')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined green" style="color: #1d91c0;">
+                        brightness_3
+                    </span>
+                </div>
+                <label>
+                    10-12 Days
+                </label>
+            </div>
+            <div class="travel-box" (click)="openModal()">
+                <div class="related-img">
+                    <span class="material-symbols-outlined orange" style="color: #235fa8">
+                        brightness_4
+                    </span>
+                </div>
+                <label>
+                    12-14 Days
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-travel-count')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined yellow" style="color: #253394;">
+                        brightness_5
+                    </span>
+                </div>
+                <label>
+                    14-15 Days
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" choose-package-option" title="travel-choose-categies" *ngIf="showTravelCount">
+        <span class="d-flex text-center w-100 align-items-start justify-content-start fw-medium fs-5">Who
+            is travelling with you?</span>
+        <div class="select-option">
+            <div class="travel-box" (click)="showSection1('app-search-location')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined red">
+                        favorite
+                    </span>
+                </div>
+                <label>
+                    Couple
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-search-location')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined blue">
+                        diversity_1
+                    </span>
+                </div>
+                <label>
+                    Family
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-search-location')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined yellow">
+                        diversity_2
+                    </span>
+                </div>
+                <label>
+                    Friends
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-search-location')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined green">
+                        face_4
+                    </span>
+                </div>
+                <label>
+                    Solo
+                </label>
+            </div>
+            <div class="travel-box" (click)="showSection1('app-search-location')">
+                <div class="related-img">
+                    <span class="material-symbols-outlined orange">
+                        corporate_fare
+                    </span>
+                </div>
+                <label>
+                    Group
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div title="search-cities" *ngIf="showPopularChoices">
+        <app-search-location style="width: 100%;"></app-search-location>
+    </div>
+</div>
+
+<app-modal-dailog></app-modal-dailog>
+
+<app-view-all-packages *ngIf="openViewPackageModal"></app-view-all-packages>

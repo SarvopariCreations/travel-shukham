@@ -1,0 +1,88 @@
+.side-panel-controller {
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 2;
+
+    .side-panel-wrapper {
+        right: 0px;
+        top: 0px;
+        left: unset;
+        transform: unset;
+        padding: 0px 0px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-bottom: unset;
+        overflow-x: hidden;
+        width: 800px;
+        position: absolute;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .side-panel-top-section {
+        padding: 15px 15px 0 15px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+        background: #fff;
+        z-index: 13;
+        padding-bottom: 1rem;
+    }
+
+    .close-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background-color: transparent;
+        border: none;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.add-activity-list{
+    display: flex;
+    padding: 1rem;
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.side-fliter-hotel{    
+
+    button{
+        border:1px solid #d9d9d9;
+        background-color: transparent;
+        color: black;
+        font-size: 14px;
+
+        &::after{
+            background: url(../../../assets/arrow-gray.svg) no-repeat center center;
+            width: 16px;
+            height: 12px;
+            background-size: cover;
+            display: inline-flex;
+            top: 6px;
+            position: relative;
+            border: none;
+            background-size: 24px;
+        }
+    }
+}
+
+.more-filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    gap: 5px;
+}

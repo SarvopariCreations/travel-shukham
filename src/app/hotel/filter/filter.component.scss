@@ -1,0 +1,106 @@
+.filter-activity {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    height: auto;
+    position: relative;
+    top: 1rem;
+    // border: 1px solid #dfdfe1;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
+
+    h6{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    ul {
+        margin-left: 0px;
+        list-style: none;
+        padding-left: 0px;
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 1rem;
+
+        li {
+            cursor: pointer;
+
+            .form-check {
+                margin-top: 0px;
+                input {
+                    border-color: #6d7ba6;
+                    border-radius: 2px;
+                }
+
+                .form-check-input:checked {
+                    background-color: #eca846;
+                    border-color: #eca846;
+                    outline: none;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+            }
+
+            label {
+                font-size: 14px;
+                width: calc(100% - 7px);
+                margin-left: 0;
+                margin-right: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                line-height: 22px;
+
+                span{
+                    line-height: 1;
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0px;
+        }
+    }
+}
+
+.material-symbols-outlined {
+    transition: transform 0.3s ease;
+}
+
+.rotate-arrow {
+    transform: rotate(180deg);
+}
+
+.applied-filter{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;        
+
+    h6{
+        margin-bottom: 1rem;
+        span{
+            margin-left: auto;     
+            cursor: pointer;       
+        }
+    }
+
+    .added-filter{
+        width: auto;
+        border: 1px solid gray;
+        border-radius: 16px;
+        padding: 5px 10px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+    }
+}

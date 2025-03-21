@@ -1,0 +1,84 @@
+.side-panel-controller{
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .side-panel-wrapper{                
+        top: auto;
+        transform: unset;
+        padding: 0px 0px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-bottom: unset;
+        overflow-x: hidden;
+        width: 800px;
+        position: absolute;
+        height: auto;
+        background-color: white;
+        bottom: auto;
+        /* transform: translateX(-70%); */        
+    }
+
+    .side-panel-top-section
+    {
+        padding: 15px 15px 0 15px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+        background: #fff;
+        z-index: 13;
+        padding-bottom: 1rem;
+    }
+    .close-icon{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background-color: transparent;
+        border: none;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.trip-location-breadcumb{
+    width: 100%;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.insurance-benefits{
+    padding: 1rem;
+    max-height: 500px;
+    overflow: auto;
+
+    p{
+        margin-bottom: 0px;
+    }
+
+    .overlay-benefits-list{
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #dedede;
+    }
+}
+
+@media(max-width:768px){
+    .side-panel-controller .side-panel-wrapper{
+        width:90%;
+    }
+    .side-panel-controller{
+        z-index: 1111;
+    }
+}

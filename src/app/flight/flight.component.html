@@ -1,0 +1,397 @@
+<app-header></app-header>
+<div class="flight-banner-row top-70">
+  <div class="container mt-0 mt-sm-3 m-p-0">
+    <div class="inner-flight-search-box">
+      <app-search-flight></app-search-flight>
+    </div>
+  </div>
+</div>
+
+<div class="container py-0 py-sm-4">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-filter [filterData]="flightFilterData"></app-filter>
+    </div>
+    <div class="col-sm-9 px-0 px-sm-3">
+      <div class="listing-rhs">
+        <h4 class="mb-3">Flights from Mumbai to Chennai, and back</h4>
+        <div class="sort-tab-wrapper">
+          <div class="sort-tab-head-list">
+            <label>Cheapest</label>
+            <span>₹12,709.47 | 2h 30m</span>
+          </div>
+          <div class="sort-tab-head-list">
+            <label>Best</label>
+            <span>₹12,709.47 | 2h 30m</span>
+          </div>
+          <div class="sort-tab-head-list">
+            <label>Fastest</label>
+            <span>₹12,709.47 | 2h 30m</span>
+          </div>
+          <div class="sort-tab-head-list other-sort-dropdown">
+            <label id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">Other Sort</label>
+            <span class="">₹12,709.47 | 2h 30m</span>
+
+            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item font14" href="#">Discounted Price</a></li>
+                <li><a class="dropdown-item font14" href="#">Early Departure</a></li>
+                <li><a class="dropdown-item font14" href="#">Late Departure</a></li>
+                <li><a class="dropdown-item font14" href="#">Early Arrival</a></li>
+                <li><a class="dropdown-item font14" href="#">Late Arrival</a></li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="listing-card-wrap">
+          <div class="cluster-contain my-3">
+            <span>Flights sorted by Lowest fares on this route</span>
+            <span class="flight-option-date">Cheaper Non-stop Flights available on <b>10 Dec & 11 Dec</b></span>
+          </div>
+          <div class="list-card-wrap">
+            <span class="mb-3">Mumbai → Chennai Fri, 13 Dec</span>
+            <div class="listing-card">
+              <div class="make-flex">
+                <ul class="flight-row">
+                  <li class="highlight flight-row-container" data-testid="flight">
+                    <div class="flight-hot-offer-row">
+                      <div class="Cheapest-offer">Cheapest</div>
+                      <a href="#" class="add-to-compare">+ Add to compare</a>
+                    </div>
+                    <div class="flight-row-body">
+                      <div class="flight-row-airline-details"><img class="flight-row-airline-logo"
+                          src="https://imgak.mmtcdn.com/flights/assets/media/mobile/common/hdpi/AI.png?v7"
+                          alt="Airline">
+                        <p class="flight-row-airline-name">AI-825</p>
+                      </div>
+                      <div class="flight-row-right-details">
+                        <div class="flight-row-basic-details">
+                          <div class="flight-row-right-details-timing">
+                            <div class="flight-row-timing">
+                              <p>Mon, 06 Jan</p>
+                              <p>Mon, 06 Jan</p>
+                            </div>
+                            <div class="flight-dates">
+                              <div class="flight-date-text">10:30 AM
+                              </div>
+                              <div class="flight-row-airline-path">
+                                <!-- <span>2h 30m</span> -->
+                                <div class="flight-air">
+                                  <span class="material-symbols-outlined">
+                                    flight_takeoff
+                                  </span>
+                                </div>
+                                <!-- <span>2h 30m</span> -->
+                              </div>
+                              <div class="flight-date-text">12:30 PM
+                              </div>
+                            </div>
+                            <div class="flight-row-airports">
+                              <p>New Delhi</p>
+                              <p>Srinagar</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flight-price-row">
+                          <div class="d-flex flex-column">
+                            <label class="font12">Per Adult</label>
+                            <h4>₹ 5400</h4>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <button class="flight-view-prices" (click)="openFlightModal()">View Prices</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flight-offer-row">
+                      <div class="flight-discount-row">
+                        Use code WELCOMEMMT and get flat 12% instant discount on this flight
+                      </div>
+                      <a class="add-to-compare d-none d-sm-flex" (click)="toggleDetails()">
+                        {{ showDetails ? 'Hide Flight Details' : 'View Flight Details' }}
+                      </a>
+                      <a class="add-to-compare d-flex d-sm-none" data-bs-toggle="modal" data-bs-target="#checkOutModal">
+                        {{ showDetails ? 'Hide Flight Details' : 'View Flight Details' }}
+                      </a>
+                    </div>
+
+                    <div class="flight-view-details-card" *ngIf="showDetails">
+                      <ul class="tab-menu">
+                        <li [class.active]="activeTab === 'details'" (click)="setActiveTab('details')">Flight Details
+                        </li>
+                        <li [class.active]="activeTab === 'fare'" (click)="setActiveTab('fare')">Fare Summary</li>
+                        <li [class.active]="activeTab === 'cancellation'" (click)="setActiveTab('cancellation')">
+                          Cancellation</li>
+                        <li [class.active]="activeTab === 'date-change'" (click)="setActiveTab('date-change')">Date
+                          Change</li>
+                      </ul>
+                      <div *ngIf="activeTab === 'details'" class="flight-detail-tab">
+                        <div class="flight-details">
+                          <p class="flight-details-head">Mumbai to Chennai , 6 Dec</p>
+                          <div class="flight-details-info">
+                            <div class="flight-details-row">
+                              <p class="d-flex flex-row gap-3 align-items-center">
+                                <span class="flight-air-icon"
+                                  style="background-image: url('https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=19');"></span>
+                                <span class="airline-heading">
+                                  <label color="#000000"><b>IndiGo</b></label>
+                                  <label color="#6d7278">6E | 5303</label>
+                                </span>
+                                <span class="aircraft-type">Airbus A321</span>
+                              </p>
+                              <div class="make-flex flight-detail-info">
+                                <div class="airline-info gap-x-10">
+                                  <div class="airline-dt-info-col">
+                                    <p class="font16 mb-0 fw-semibold">12:05</p>
+                                    <p class="font12 mb-1">Fri, 6 Dec 24</p>
+                                    <span style="color: #4a4a4a;">Terminal T1</span>
+                                    <p class="font12">Mumbai, India</p>
+                                  </div>
+                                  <div class="airline-dtl-duration font12">
+                                    01<span style="color: #757575;"> h </span>50<span style="color: #757575;"> m </span>
+                                    <div class="relative flight-stops-separator">
+                                      <p class="flight-stops-separator-line"
+                                        style="border-top: 3px solid rgb(255 213 154)"></p>
+                                    </div>
+                                  </div>
+                                  <div class="airline-dt-info-col">
+                                    <p class="font16 mb-0 fw-semibold">03:05</p>
+                                    <p class="font12 mb-1">Fri, 6 Dec 24</p>
+                                    <span style="color: #4a4a4a;">Terminal T1</span>
+                                    <p class="font12">Mumbai, India</p>
+                                  </div>
+                                </div>
+                                <div class="baggage-info">
+                                  <p class="make-bagg-row mb-2">
+                                    <span class="baggage-info-text font14 fw-semibold">BAGGAGE :</span>
+                                    <span class="baggage-info-text font14 fw-semibold">CHECK IN</span>
+                                    <span class="baggage-info-text font14 fw-semibold">CABIN</span>
+                                  </p>
+                                  <p class="make-bagg-row">
+                                    <span class="baggage-info-text font12">ADULT</span>
+                                    <span class="baggage-info-text font12">15 Kgs (1 piece only)</span>
+                                    <span class="baggage-info-text font12">7 Kgs (1 piece only)</span>
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="d-flex flex-row align-items-center flight-including-row">
+                                <div class="d-flex flex-row font12 gap-1 align-items-center">
+                                  <span class="material-symbols-outlined font16">
+                                    restaurant
+                                  </span>
+                                  <div class="font12">3-3 Layout</div>
+                                </div>
+                                <div class="d-flex flex-row font12 gap-1 align-items-center">
+                                  <span class="material-symbols-outlined font16">
+                                    coffee
+                                  </span>
+                                  <div class="font12">Beverage Available</div>
+                                </div>
+                                <div class="d-flex flex-row font12 gap-1 align-items-center">
+                                  <span class="material-symbols-outlined font16">
+                                    airline_seat_recline_normal
+                                  </span>
+                                  <div class="font12">Standard Recliner(29'' Legroom)</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngIf="activeTab === 'fare'" class="fare-summary-tab">
+                        <div class="flight-details">
+                          <p class="flight-details-head">Fare breakup</p>
+                          <div class="flight-details-info">
+                            <p class="append-bottom-8 font14">
+                              <span class="fare-breakup-text">
+                                <span style="font-size: 14px; color: rgb(0, 0, 0);">TOTAL</span>
+                              </span>
+                              <span>
+                                <span style="font-size: 14px; color: rgb(0, 0, 0);">₹ 7,305</span>
+                              </span>
+                            </p>
+                            <p class="append-bottom-8 font14">
+                              <span class="fare-breakup-text">
+                                <span style="color: rgb(135, 135, 135);">Base Fare</span>
+                              </span>
+                              <span>
+                                <span style="color: rgb(135, 135, 135);">₹ 6,632</span>
+                              </span>
+                            </p>
+                            <p class="append-bottom-8 font14">
+                              <span class="fare-breakup-text">
+                                <span style="color: rgb(135, 135, 135);">Surcharges</span>
+                              </span>
+                              <span>
+                                <span style="color: rgb(135, 135, 135);">₹ 673</span>
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngIf="activeTab === 'cancellation'" class="flight-Cancellation-tab">
+                        <div>
+                          <div class="flight-details">
+                            <div class="flight-details-head px-3">
+                              <div class="make-flex space-between">
+                                <span class="make-flex perfect-center">
+                                  <span class="append-right-10">
+                                    <span class="single-airline"></span>
+                                  </span>
+                                  BOM-MAA
+                                </span>
+                              </div>
+                            </div>
+                            <div class="collapse show">
+                              <div class="py-3 px-3">
+                                <div class="flight-details font14 mt-0">
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="font14 text-black mb-0 fw-medium">Time frame</p>
+                                      <p class="mb-0 font12">(From Scheduled flight departure)</p>
+                                    </div>
+                                    <div class="flight-details-info-left">
+                                      <p class="font14 text-black mb-0 fw-medium">Airline Fee + MMT Fee</p>
+                                      <p class="mb-0 font14">(Per passenger)</p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="mb-0">0 hours to 4 hours*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">Non Refundable</b><br></p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="mb-0">4 hours to 4 days*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">₹ 4,279 + ₹ 300</b><br></p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="mb-0">4 days to 365 days*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">₹ 3,209 + ₹ 300</b><br></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <p class="font14 mt-2">
+                                  *From the Time of Departure
+                                </p>
+                                <p class="font14"></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-strip mt-3">
+                            <b>*Important:</b> The airline fee is indicative. TravelSukhamdoes not guarantee the accuracy
+                            of this information. All fees mentioned are per passenger. All refunds are subject to
+                            airline approval.
+                          </div>
+                        </div>
+                      </div>
+                      <div *ngIf="activeTab === 'date-change'" class="flight-date-change">
+                        <div>
+                          <div class="flight-details">
+                            <div class="flight-details-head px-3">
+                              <div class="make-flex space-between">
+                                <span class="make-flex perfect-center">
+                                  <span class="append-right-10">
+                                    <span class="single-airline"></span>
+                                  </span>
+                                  BOM-MAA
+                                </span>
+                              </div>
+                            </div>
+                            <div class="collapse show">
+                              <div class="py-3 px-3">
+                                <div class="flight-details font14 mt-0">
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="font14 text-black mb-0 fw-medium">Time frame</p>
+                                      <p class="mb-0 font12">(From Scheduled flight departure)</p>
+                                    </div>
+                                    <div class="flight-details-info-left">
+                                      <p class="font14 text-black mb-0 fw-medium">Airline Fee + MMT Fee + Fare
+                                        difference
+                                      </p>
+                                      <p class="mb-0 font14">(Per passenger)</p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="mb-0">0 hours to 4 hours*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">Non Refundable</b><br></p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left">
+                                      <p class="mb-0">4 hours to 4 days*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">₹ 4,279 + ₹ 300 + Fare difference</b><br></p>
+                                    </div>
+                                  </div>
+                                  <div class="date-change-info">
+                                    <div class="flight-details-info-left"
+                                    >
+                                      <p class="mb-0">4 days to 365 days*</p>
+                                    </div>
+                                    <div class="flight-details-info-right">
+                                      <p class="mb-0 font14">ADULT : <b class="fw-medium">₹ 3,209 + ₹ 300 + Fare difference</b><br></p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <p class="font14 mt-2">
+                                  *From the Time of Departure
+                                </p>
+                                <p class="font14"></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="info-strip mt-3">
+                            <b>*Important:</b> The airline fee is indicative. TravelSukhamdoes not guarantee the accuracy
+                            of this information. All fees mentioned are per passenger. Date change charges are
+                            applicable only on selecting the same airline on a new date. The difference in fares between
+                            the old and the new booking will also be payable by the user.
+                            Please refer to the Date Change Charges section above for details on the number of allowed
+                            free date changes, if applicable
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-compare-price-modal *ngIf="isFModalOpen" (close)="closeFlightModal()"></app-compare-price-modal>
+
+
+
+<div class="modal fade" id="checkOutModal" tabindex="-1" aria-labelledby="checkOutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="checkOutModalLabel">
+          <span class="material-symbols-outlined" data-bs-dismiss="modal" aria-label="Close">
+          arrow_back
+          </span> View Flight Details</h5>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+

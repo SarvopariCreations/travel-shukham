@@ -1,0 +1,61 @@
+<div class="side-panel-controller">
+    <button class="close-icon" (click)="closeModal()">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+    <div class="side-panel-wrapper">
+        <div class="side-panel-top-section">
+            <div class="transfer-listing-header mb-3">
+                <h5>Change Transfer</h5>
+                <div class="trasfer-place-name mb-2">Munnar - Thekkady - Alleppey</div>
+                <div class="notes">Changes would be reflected to whole itinerary</div>
+            </div>
+            <div class="transfer-overlay-v d-flex flex-column gap-3">
+                <div class="card-container" *ngFor="let card of cards" [class.selected]="card.isSelected">
+                    <div class="image-slider">
+                      <img [src]="card.image" [class.active]="card.isSelected" />
+
+                      <div class="selected-plan">
+                        <span class="material-symbols-outlined">
+                            check_circle
+                            </span>  Selected                        
+                      </div>
+                    </div>
+                    <div class="card-flex-one">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <p class="grey-text">
+                            <span class="font14 fw-medium">
+                              {{ card.type }}
+                            </span>
+                          </p>
+                          <p class="font12 mb-2">{{ card.description }}</p>
+                        </div>
+                        <span class="view-details-cta">VIEW DETAILS</span>
+                      </div>
+                      <div class="card-d-flex d-flex flex-column justify-content-between gap-3">
+                        <div class="d-flex flex-column gap-2">
+                          <div class="facilities-container">
+                            <span class="font12">Facilities:</span>
+                            <div *ngFor="let facility of card.facilities" class="d-flex flex-row align-items-center gap-1">
+                              <span class="material-symbols-outlined font12">{{ facility.icon }}</span>
+                              <span class="font12">{{ facility.text }}</span>
+                            </div>
+                          </div>
+                          <div class="font12 fw-medium">{{ card.details }}</div>
+                        </div>
+                        <div class="flex-one d-flex flex-row gap-3 align-items-center justify-content-end">
+                          <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                            <div class="fw-medium">+ ₹{{ card.price }}</div>
+                            <div class="font14">Price/Person</div>
+                          </div>
+                          <div class="select-btn" (click)="selectCard(card.id)">SELECT</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>               
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="col-sm-12 bg-white border-bottom header-container">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="menu-btn d-flex gap-3 align-items-center">
+                <span class="material-icons humbger-menu" (click)="toggleSidebar()">menu</span>
+            <div class="logo" routerLink="/">
+                <img src="../../assets/ts-logo.png" alt="">
+            </div>
+            </div>
+            <div class="menu-section">
+                <nav>
+                    <div class="container">
+                        <ul class="menu-main">
+                            <li *ngFor="let item of menu">
+                              <a href="">{{ item.title }}<span class="material-icons">expand_more</span></a>
+                              <div class="menu-sub">
+                                <div class="w-100 d-flex flex-row">
+                                  <div class="w-75 d-flex">
+                                    <div class="menu-col-1 two-column">
+                                      <ul>
+                                        <li *ngFor="let subItem of item.subMenu">
+                                          <a [routerLink]="subItem.routerLink">{{ subItem.title }}
+                                            <span *ngIf="subItem.specialPlace" class="special-place {{ subItem.specialPlace | lowercase }}">{{ subItem.specialPlace }}</span>
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                  <div class="w-25 d-flex align-items-start justiy-content-center">
+                                    <img src="../../assets/menu-banner.avif" alt="" class="img-fluid rounded-4">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="ts-top-right gap-3 w-auto d-none d-sm-flex">
+                <a href="#" routerLink="/package-list" class="w-auto itinerary-builder-btn" routerLink="/itinerary-builder">Itinerary builder</a>
+                <a href="#" routerLink="/package-list" routerLink="/login" class="login-btn">Login</a>
+            </div>
+            <div class="logged-in-user d-flex gap-1">
+              <div class="user-avatar">
+                <!-- <img src="../../assets/user-avatar.png" alt=""> -->
+                 J
+              </div>
+              <div class="user-info">
+                <p class="user-name mb-0">John Doe</p>
+              </div>
+            </div>
+    </div>
+</div>
+
+
+
+<!-- Sidebar for mobile -->
+<div class="sidebar" [class.open]="isSidebarOpen">
+    <button class="close-btn" (click)="toggleSidebar()">×</button>
+    <ul class="menu-main menu-col-1">
+        <li>
+            <a href="#" routerLink="/login">Login</a>
+        </li>
+        <li>
+            <a href="#" routerLink="/itinerary-builder">Itinerary builder</a>
+        </li>
+        <li *ngFor="let item of menu">
+            <a href="#" (click)="toggleSubMenu(item)">{{ item.title }}<span class="material-icons">expand_more</span></a>
+            <ul *ngIf="item.isOpen" class="sub-menu">
+                <li *ngFor="let subItem of item.subMenu">
+                    <a [routerLink]="subItem.routerLink">{{ subItem.title }}
+                        <span *ngIf="subItem.specialPlace" class="special-place {{ subItem.specialPlace | lowercase }}">{{ subItem.specialPlace }}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="overlay" [class.open]="isSidebarOpen" (click)="toggleSidebar()"></div>

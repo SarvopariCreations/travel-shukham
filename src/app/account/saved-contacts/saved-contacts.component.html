@@ -1,0 +1,76 @@
+<div class="col-sm-12 d-flex align-items-center justify-content-center flex-column h-200" *ngIf="!showForm">
+    <p>You have no saved contacts presently!</p>
+    <button class="trevlo-btn py-3 px-4" (click)="toggleForm()"><span
+            class="align-items-center d-flex justify-content-center gap-1"><span class="material-symbols-outlined">
+                add
+            </span> Add</span></button>
+</div>
+<form *ngIf="showForm">
+    <div class="col-sm-12">
+        <div class="row mb-4">
+            <h6>Add Contact</h6>
+            <label class="text-black-50">Please provide details as per the passport records.</label>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Salutation <span>*</span></label>
+                    <input type="text" placeholder="Enter Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Surname <span>*</span></label>
+                    <input type="text" placeholder="Enter email" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Given name <span>*</span></label>
+                    <input type="text" placeholder="Enter mobile" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Passport Number<span>*</span></label>
+                    <input type="text" placeholder="Enter Address here" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Date of Birth<span>*</span></label>
+                    <input type="text" placeholder="Enter Address here" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Passport Expiry Date<span>*</span></label>
+                    <input type="text" placeholder="Enter Address here" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">State <span>*</span></label>
+                    <input type="text" placeholder="Enter state" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6 mb-4">
+                <div class="form-group">
+                    <label class="mb-2">Pin code<span>*</span></label>
+                    <input type="text" placeholder="Enter pin code" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 flex-row justify-content-end d-flex gap-3">
+            <button class="trevlo-btn"><span>Cancel</span></button>
+            <button class="trevlo-btn"><span>Add</span></button>
+        </div>
+    </div>
+</form>

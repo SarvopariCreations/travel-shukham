@@ -1,0 +1,631 @@
+<app-header></app-header>
+<div class="ts-pkg-detl top-70">
+  <div class="container">
+    <div class="col-sm-12 pkg-hdr-name">
+      <h1 class="fs-6 fs-sm-3 pt-3 pb-3 text-white mb-0">4 nights Nusa Penida and Kuta</h1>
+      <div class="d-flex flex-row gap-2">
+        <div class="customize-lbl">Customizable</div>
+        <div class="day-lbl">4N/5D</div>
+        <div class="covered-location">
+          <span>1N Gulmarg</span>•
+          <span>2N Pahalgam</span>•
+          <span>1N Srinagar</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 mt-3">
+      <div class="row">
+        <div class="view-gly-section">
+          <div class="left">
+            <figure>
+              <img src="../../assets/img1.webp">
+            </figure>
+          </div>
+          <div class="right">
+            <div class="top">
+              <figure>
+                <img src="../../assets/img2.webp">
+              </figure>
+            </div>
+            <div class="bottom">
+              <figure>
+                <img src="../../assets/img3.webp">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fuild mt-0 pt-4">
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="d-flex gap-5 align-items-center section-base">
+          <a class="active" [class.active]="activeTab === 'itinerary'" (click)="setActiveTab('itinerary')">
+            <span class="material-symbols-outlined">
+              date_range
+            </span>
+            Itinerary
+          </a>
+          <a [class.active]="activeTab === 'policies'" (click)="setActiveTab('policies')">
+            <span class="material-symbols-outlined">
+              corporate_fare
+            </span>
+            Policies <b>(2)</b>
+          </a>
+          <a [class.active]="activeTab === 'summary'" (click)="setActiveTab('summary')">
+            <span class="material-symbols-outlined">
+              directions_car
+            </span>
+            Summary <b>(2)</b>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="w-100 py-4 package-detail">
+  <div class="container">
+    <div class="row">
+      <div class="custom-trip">
+        <div class="left">
+          <div *ngIf="activeTab === 'itinerary'">
+            <div class="each-tab-dtl">
+              <div class="active">5 DAY PLAN</div>
+              <div>2 Flights & 4 Transfers</div>
+              <div>3 Hotels</div>
+              <div>11 Activities</div>
+            </div>
+            <div class="d-flex flex-row col-bar-section">
+              <div class="day-wise-list">
+                <h4>Day Plan</h4>
+                <ul class="mt-3">
+                  <li>
+                    <span>01</span><label>Jan,Mon</label>
+                  </li>
+                  <li>
+                    <span>02</span><label>Jan,Mon</label>
+                  </li>
+                  <li>
+                    <span>03</span><label>Jan,Mon</label>
+                  </li>
+                  <li>
+                    <span>04</span><label>Jan,Mon</label>
+                  </li>
+                  <li>
+                    <span>05</span><label>Jan,Mon</label>
+                  </li>
+                </ul>
+              </div>
+              <div class="each-day-dtl iternary-buildup-section">
+                <div class="day-wise-details">
+                  <div class="day-plan-row d-flex flex-row justify-content-between">
+                    <div class="day-col">Day 1 - Arrival in Srinagar</div>
+                    <div class="included-items d-none">
+                      INCLUDED:
+                      <div>
+                        <span class="material-symbols-outlined">
+                          flight
+                        </span>
+                        1 Flight
+                      </div>•
+                      <div><span class="material-symbols-outlined">
+                          hotel
+                        </span> 1 Hotel</div>•
+                      <div><span class="material-symbols-outlined">
+                          directions_car
+                        </span> 1 Transfer</div>
+                      <div><span class="material-symbols-outlined">
+                          hiking
+                        </span> 4 Activities</div>
+                    </div>
+                  </div>
+
+                  <div class="dayplan-section commute-wrapper  d-none">
+                    <div class="commute-inner set-borde">
+                      <div class="flight-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 28" fill="none">
+                          <path
+                            d="M10.8974 21.625H12.4574L16.3574 15.4671L20.6474 15.4671C21.2948 15.4671 21.8174 14.9514 21.8174 14.3125C21.8174 13.6736 21.2948 13.1579 20.6474 13.1579H16.3574L12.4574 7H10.8974L12.8474 13.1579L8.55738 13.1579L7.38738 11.6184H6.21738L6.99738 14.3125L6.21738 17.0066L7.38738 17.0066L8.55738 15.4671H12.8474L10.8974 21.625Z"
+                            fill="#4a4a4a"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="flightListRow flexOne column">
+                          <div class="makeFlex">
+                            <ul class="flight-row firstFlightRow">
+                              <li class="highlight flight-row-container" data-testid="flight">
+                                <div class="flight-row-header">
+                                  <p class="flight-row-title">Flight from New Delhi to
+                                    Srinagar <b>01h 25m</b></p>
+                                  <div data-testid="changeRemoveBtn_flight" id="changeRemoveBtn" class="flight-row-btns">
+                                    <span id="remove">Remove</span><span id="change" (click)="openFlightModal()">Change</span>
+                                  </div>
+                                </div>
+                                <div class="flight-row-body">
+                                  <div class="flight-row-airline-details"><img class="flight-row-airline-logo"
+                                      src="https://imgak.mmtcdn.com/flights/assets/media/mobile/common/hdpi/AI.png?v7"
+                                      alt="Airline">
+                                    <p class="flight-row-airline-name">AI-825</p>
+                                  </div>
+                                  <div class="flight-row-right-details">
+                                    <div class="flight-row-basic-details">
+                                      <div class="flight-row-right-details-timing">
+                                        <div class="flight-row-timing">
+                                          <p>Mon, 06 Jan</p>
+                                          <p>Mon, 06 Jan</p>
+                                        </div>
+                                        <div class="flight-dates">
+                                          <div class="flight-date-text">10:30 AM
+                                          </div>
+                                          <div class="flight-row-airline-path">
+                                            <div class="flight-air">
+                                              <span class="material-symbols-outlined">
+                                                flight_takeoff
+                                              </span>
+                                            </div>
+                                          </div>
+                                          <div class="flight-date-text">12:30 PM
+                                          </div>
+                                        </div>
+                                        <div class="flight-row-airports">
+                                          <p>New Delhi</p>
+                                          <p>Srinagar</p>
+                                        </div>
+                                      </div>
+                                      <div class="flight-row-baggage">
+                                        <p>Baggage</p>
+                                        <p><b><span class="flightIcon"><svg width="12" height="19" viewBox="0 0 12 19"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <image width="12" height="19"
+                                                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAASCAYAAAC9+TVUAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGUSURBVHgBrVNNSwJRFD1vZjAqNGkR0aZN0MZFatCmIFq1Ci2kRUURBNGmbSCEi+gftGqR64hK/0CLCFpEIhREYURERGqgkh8xM68742iNqI3VgXfffWfeO/fcCwP8A8SmXwen7Bhw9YM5C8g+yY2uCQ0FvP5NdIopfKg36OlNw+3bRigkWBfxzmxA5WvgfByxIwmcTUJgi4jE52EJgYAIjz8Bt3/ZxA/7FuCePrPm5BrtFB0oJO9NvKrcgaHbmkg+KZP9Xah4NIuIL9ReuJ4I06M2sGh8nbIxohh+AkcJTNjB5cHpl4jHH6S4hdaQgY0P4fz4odLOhLE/k2VO0m+Up2jlab0anhPGntadAF0oSn0aJRj2yruqrlA3VzSPQzrt0YNbKGzVKLBEF99RzM0RHylTsk2LksmgIER0jnEXDZfrRUS+bxQ6IRsSFLlEeQHfJifV9Gmcabisek0y7R1OzdlInUetgM3WMpXBqvgDDBEeQ8vgCiQ1o2XldnKlIBxtdrI6imZ/dvU9shTDuIj+ongDfAKUIXO3B6fXiAAAAABJRU5ErkJggg==">
+                                                </image>
+                                              </svg></span>Cabin :</b>7 Kgs
+                                        </p>
+                                        <p><b><span class="flightIcon"><svg width="12" height="19" viewBox="0 0 12 19"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <image width="12" height="19"
+                                                  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAdCAYAAACnmDyCAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHeSURBVHgB7VVNK0RRGH7eOzMGkWyERBY+I/lYyE7ZiZp8lAUrivgDKFE2FqyUhSQ2SvKZYmellDFkYUMpH8nnQhEz9x7v3Glmzp17iWkWFvPWufc8z3nP85x7Tvc9QIyCLNnK5hqQvR8QmaYxQR4o3im4tx5l2m5KHB1VsHmyAtI8ENiN8CWQGIBmK2DQ9rPQ3l4CkJ7Hzr04WtsxjVe5qtigIJI2C70WqsDDDoT6CKsgnEDBk5kORkVzPWz2Se6V4Feh3UMTEzjemIF/53SuuqUYQtvnXjr+Ggp143B1Tgkg1RWViL4w0anrBRClhQYIC7zSphAWNMfPFgmPwKd2SPlpkpAh7pgObzRp1/y4lfAVPp/vIidZCUUVcaG40L8SMtcjQdlcuDLCBUbHOSEsKB+OVO93Qm+Skv9vbpdyepjrCiHCMByJajgd7/5X4NPsyhI7eaVkp8HOiG3cEiShxSAJ3Jw9I6vonGt7LvS6ROxIvh+bwCUbjMOzNo1YhvFeK21LgVOd594DfB/DON1+Mc2odI3xyuu4LvXCvX4RpI3H7/ys5XurlVsfHEllsLSmQd6YBt7Tfpk2Hn+yOOAzWOZ1cgX8cFsLiSFo5DectRxHdVMy/hx8K5c36pfGF68jiNFT8PzVAAAAAElFTkSuQmCC">
+                                                </image>
+                                              </svg></span>Check-in :</b>15
+                                          Kgs</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="info-container"></div>
+                      </div>
+                    </div>
+                    <div class="commute-inner d-none">
+                      <div class="car-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.8864 3.41705H17.3999C17.649 3.41705 17.8408 3.64145 17.8209 3.88505V4.43345C17.8209 4.69745 17.6303 4.90025 17.3812 4.90025H16.4606C16.6525 5.57225 16.7671 6.34505 16.7671 7.24025V8.80505V11.4511C16.7671 11.7151 16.5752 11.9191 16.3261 11.9191H14.6981C14.4489 11.9191 14.2571 11.7151 14.2571 11.4511V10.2307C12.7237 10.3723 11.0184 10.4539 9.21722 10.4539C7.41602 10.4539 5.70948 10.3723 4.17734 10.2307V11.4511C4.17734 11.7151 3.98551 11.9191 3.73638 11.9191H2.10708C1.85795 11.9191 1.66612 11.7151 1.66612 11.4511V7.24145C1.66612 6.34505 1.78072 5.57345 1.97255 4.90145H1.05326C0.804134 4.90145 0.612305 4.69745 0.612305 4.43345V3.88505C0.612305 3.62105 0.804134 3.41705 1.05326 3.41705H2.54804C2.59548 3.34642 2.63805 3.27078 2.68057 3.19524L2.68057 3.19524L2.68058 3.19523C2.72401 3.11807 2.76738 3.04101 2.81585 2.96945C2.89308 2.84705 3.92821 1.40345 4.36917 0.813055C4.77027 0.285055 5.28846 0.0810547 5.86394 0.0810547H12.5705C13.146 0.0810547 13.6816 0.304255 14.0653 0.813055C14.5249 1.40345 15.1191 2.21705 15.4056 2.64425C15.4454 2.69626 15.4803 2.75401 15.5152 2.81174L15.5152 2.81176L15.5152 2.81179C15.5479 2.86595 15.5806 2.92009 15.6173 2.96945C15.688 3.07376 15.7485 3.17872 15.8138 3.292L15.8138 3.29204L15.8139 3.29206C15.8372 3.33254 15.8612 3.37409 15.8864 3.41705ZM6.05457 6.89536L6.51421 6.24496L6.51297 6.24376C6.62881 6.08176 6.57151 5.95936 6.39837 5.97976H2.98779C2.81465 5.97976 2.64275 6.12136 2.62282 6.32536L2.58545 6.83416C2.58545 7.01776 2.71873 7.17976 2.91056 7.17976H5.51894C5.70953 7.17976 5.93997 7.05856 6.05457 6.89536ZM7.89414 4.27209H3.94544C3.71624 4.27209 3.52441 4.06809 3.52441 3.82449C3.52441 3.71214 3.60521 3.58363 3.64835 3.51502L3.65894 3.49809C3.75486 3.33609 4.69283 2.03409 5.01919 1.60689C5.32686 1.20009 5.74789 1.03809 6.18885 1.03809H8.12333V1.11849C8.12333 1.38249 8.31516 1.58649 8.56429 1.58649H9.92454C10.1737 1.58649 10.3655 1.38249 10.3655 1.11849V1.03809H12.3212C12.7621 1.03809 13.1831 1.20009 13.4896 1.60689C13.8159 2.03409 14.2569 2.64489 14.4861 2.97009C14.506 2.99049 14.5247 3.01089 14.5247 3.03009C14.5502 3.06843 14.5772 3.10805 14.6048 3.1486L14.6048 3.14863C14.6808 3.26038 14.7617 3.37923 14.8311 3.49809L14.8388 3.51015C14.8811 3.57659 14.9657 3.70954 14.9657 3.82449C14.9657 4.06809 14.7738 4.27209 14.5446 4.27209H7.89414ZM12.8969 7.15888H15.5214H15.5227C15.7133 7.15888 15.8665 6.99688 15.8465 6.79288L15.8092 6.28408C15.7905 6.08128 15.6373 5.93848 15.4454 5.93848H12.0336C11.8418 5.93848 11.7845 6.06088 11.8991 6.22408L12.36 6.87448C12.4746 7.03768 12.705 7.15888 12.8969 7.15888Z"
+                            fill="#4a4a4a"></path>
+                        </svg>
+                      </div>
+                      <div class="transfer-row highlight" data-testid="transfer">
+                        <div class="transfer-row-header">
+                          <p class="transfer-row-title">Airport in Srinagar to hotel in Gulmarg
+                          </p>
+                          <div id="changeRemoveBtn" class="transfer-row-btns"><span id="remove">Remove</span>
+                            <span id="change" (click)="openModal1()">Change</span></div>
+                        </div>
+                        <div class="transfer-row-body">
+                          <figure class="transfer-row-image-wrapper">
+                            <div class=" image-carousel-slide ">
+                              <div class="imageLoaderContainer " style="height: 100px;"><img
+                                  class="borderRadius4 vrtTop active " height="100"
+                                  src="https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/phonixImages/Sedan_2.png">
+                              </div>
+                            </div>
+                          </figure>
+                          <div class="transfer-row-details">
+                            <div class="transfer-row-details-title">
+                              <p class="greyText"><span class="text-black fs-5 fw-medium">Private
+                                  Transfer</span></p>
+                              <p class="vehicle-model">Swift, Etios or similar</p>
+                            </div>
+                            <p class="appendTop15"><span class="transfer-row-text-label">Facilities</span><span
+                                class="transfer-row-text-value relative">3
+                                seater | AC | 2 Luggage Bags | First
+                                Aid</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="commute-options"><span class="font14 latoBold">There are more ways to
+                        reach your destination</span><span class="blue-text latoBlack commute-overlay"> VIEW TRANSPORT
+                        OPTION(S)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="add-itenary-build-section">
+                  <div class="add-custom-iternary-container">
+
+                    <div class="d-flex flex-column py-3 px-3 border align-items-center gap-1 rounded-2 position-relative">
+                      <p class="font16 text-black">Spend time at Leisure or add an activity to your day</p>
+                      <div class="add-common-btn add-activity-bg text-white" (click)="openModal()">
+                        <span class="material-symbols-outlined">
+                          location_city
+                          </span> Add City
+                      </div>
+                      <div class="bg-icon-set">
+                        <span class="material-symbols-outlined">
+                          location_city
+                          </span>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column py-3 px-3 border align-items-center gap-1 rounded-2 position-relative">
+                      <p class="font16 text-black">Spend time at Leisure or add an activity to your day</p>
+                      <div class="add-common-btn add-hotel-bg text-white" (click)="openHotelModal()">
+                        <span class="material-symbols-outlined">
+                          Hotel
+                        </span> Add Hotel
+                      </div>
+
+                      <div class="bg-icon-set">
+                        <span class="material-symbols-outlined">
+                          Hotel
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="d-flex flex-column py-3 px-3 border align-items-center gap-1 rounded-2 position-relative">
+                      <p class="font16 text-black">Spend time at Leisure or add an activity to your day</p>
+                      <div class="add-common-btn add-activity-bg text-white" (click)="openActivityModal()">
+                        <span class="material-symbols-outlined">
+                          hiking
+                          </span> Add Activity
+                      </div>
+                      <div class="bg-icon-set">
+                        <span class="material-symbols-outlined">
+                          hiking
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column py-3 border px-3 align-items-center gap-1 rounded-2 position-relative">
+                      <p class="font16 text-black">Spend time at Leisure or add an activity to your day</p>
+                      <div class="add-common-btn add-bg-flight text-white" (click)="openFlightModal()">
+                        <span class="material-symbols-outlined">
+                          flight
+                        </span> Add Flight
+                      </div>
+                      <div class="bg-icon-set">
+                        <span class="material-symbols-outlined">
+                          flight
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column py-3 px-3 border align-items-center gap-1 rounded-2 position-relative">
+                      <p class="font16 text-black">Spend time at Leisure or add an activity to your day</p>
+                      <div class="add-common-btn add-transport-bg text-white" (click)="openModal1()">
+                        <span class="material-symbols-outlined">
+                          directions_car
+                          </span> Add Transport
+                      </div>
+
+                      <div class="bg-icon-set">
+                        <span class="material-symbols-outlined">
+                          directions_car
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="activeTab === 'policies'" class="py-3 px-3">
+              <div>
+                <h4 class="mb-3">Cancellation & Date Change</h4>
+                <h5>Package Cancellation Policy</h5>            
+                <p class="gray1">Cancellation not possible after booking</p>
+                
+                <h5>Package Date Change Policy</h5>
+                <p class="gray1">Date Change not possible after booking</p>
+              </div>
+              <hr>
+            <div>
+              <div class="">
+                <h4 class="mb-3">Terms and Conditions</h4>
+                <h5>Exclusions</h5>
+                <ul class="gray1">
+                    <li>Package price does not include Gala dinner charges applicable on Christmas and New Year's Eve.</li>
+                    <li>Entrance fee, sightseeing tickets, and guide charges are not included in the packages.</li>
+                    <li>The booking price does not include personal expenses such as laundry, room service, mini bar, etc.</li>
+                    <li>Special dinner or mandatory charges during New Year, Christmas, or other special occasions are not included.</li>
+                    <li>Expenses for ticket deviations or extensions are excluded from the package price.</li>
+                </ul>
+        
+                <h5>Terms and Conditions</h5>
+                <ul class="gray1">
+                    <li>Standard hotel check-in time is 2:00 pm and check-out is 11:00 am. Early check-in or late check-out is subject to hotel discretion.</li>
+                    <li>A maximum of 3 adults are allowed per room, with the third occupant provided a mattress/rollaway bed.</li>
+                    <li>Bed type allocation is subject to hotel discretion.</li>
+                    <li>The itinerary is fixed and non-modifiable. Transportation is provided as per the itinerary and is not at disposal.</li>
+                    <li>No refunds for complimentary activities that are non-operational.</li>
+                    <li>AC is non-functional in cool or hilly areas.</li>
+                    <li>In case of natural calamities or weather disruptions, refunds will be processed as per agreements with vendors.</li>
+                    <li>Hotels may request a refundable security deposit at check-in.</li>
+                    <li>Flight-related policies may require baggage recheck at transit points for multi-airline journeys.</li>
+                    <li>MakeMyTrip reserves the right to modify the itinerary due to unforeseen circumstances.</li>
+                    <li>For cancellations and refunds, refer to our <a href="#">Cancellation Policy</a>.</li>
+                    <li>Legal disputes are subject to New Delhi jurisdiction.</li>
+                </ul>      
+            </div>              
+            </div>
+          </div>
+          <div *ngIf="activeTab === 'summary'" class="py-3 px-3">
+            <div class="summaries-card">
+              <div>
+                <div class="start-jurney-from">
+                  <p>
+                    <span class="material-symbols-outlined">
+                      travel
+                      </span>
+                    Arrival in Kochi by Air India Express Flight IX-1141 | Departing on 02 Feb, 05:25 AM | Arriving on 02 Feb, 08:40 AM | Includes Check In Baggage
+                  </p>
+
+                  <p>
+                    <span class="material-symbols-outlined">
+                      minor_crash
+                      </span>
+                      Arrival in Kochi by Air India Express Flight IX-1141 | Departing on 02 Feb, 05:25 AM | Arriving on 02 Feb, 08:40 AM | Includes Check In Baggage
+                    </p>
+
+
+                </div>
+              </div>
+              <ng-container *ngFor="let trip of trips;let i = index">
+                <!-- Trip Detail Section -->
+                <div *ngIf="trip.type === 'detail'" class="trip-detail">
+                  <h3 class="font18 mb-0">
+                    {{ trip.title }} — <span class="fs-6 fw-normal">{{ trip.nightsStay }}</span>
+                  </h3>
+                  <div class="col-dtl" *ngFor="let day of trip.days">
+                    <div class="choose-date">
+                      <span>{{ day.dayNumber }}</span>
+                      <label class="text-nowrap gray1">{{ day.date }}</label>
+                    </div>
+                    <div class="start-jurney">
+                      <div class="arrive-jurney col">
+                        <div class="inclusion">
+                          <div *ngFor="let inclusion of day.inclusions">
+                            <span class="material-symbols-outlined">{{ inclusion.icon }}</span>
+                            {{ inclusion.description }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Connectivity Line Section -->
+                <div *ngIf="trip.type === 'connectivity' && i !== trips.length - 1" class="connectivity-line">
+                  <div class="ferry-center">
+                    <span class="material-symbols-outlined">minor_crash</span>
+                    {{ trip.connectivity }}
+                  </div>
+                  <div class="dot-connection"></div>
+                </div>
+              </ng-container>
+              
+              <div class="mt-3">
+                <div class="start-jurney-from">
+                  <p>
+                    <span class="material-symbols-outlined">
+                      minor_crash
+                      </span>
+                    Arrival in Kochi by Air India Express Flight IX-1141 | Departing on 02 Feb, 05:25 AM | Arriving on 02 Feb, 08:40 AM | Includes Check In Baggage
+                  </p>
+
+                  <p>
+                    <span class="material-symbols-outlined">
+                      travel
+                      </span>                    
+                      Arrival in Kochi by Air India Express Flight IX-1141 | Departing on 02 Feb, 05:25 AM | Arriving on 02 Feb, 08:40 AM | Includes Check In Baggage
+                    </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="right gap-3 d-flex flex-column">
+          <div class="book-trip-">
+            <div class="top-col">
+              <div class="choosed-date"><span class="material-symbols-outlined">
+                  edit
+                </span> Sep 01 . No Flight . 2 Adults . 1 Room</div>
+              <div class="show-amount">
+                ₹150,845
+              </div>
+              <button class="boot-trip-btn">Proceed to payment</button>
+            </div>
+            <div class="sec-col flex-column">
+              <div class="d-flex flex-row justify-content-between w-100 mb-3">
+                <span>Vacation Price</span>
+                <span class="align-self-end">₹140,000</span>
+              </div>
+              <div class="d-flex flex-row justify-content-between align-items-center w-100">
+                <span class="d-flex align-items-center gap-1">TCS
+                  <span class="material-symbols-outlined fs-5">
+                    info
+                  </span>
+                </span>
+                <span class="align-self-end">₹3,661</span>
+              </div>
+              <div>
+                <hr>
+              </div>
+              <div class="d-flex flex-row justify-content-between w-100">
+                <span>Total Payable Amount</span>
+                <span class="align-self-end fw-medium">₹143,661</span>
+              </div>
+            </div>
+            <div class="notes">
+              <span class="material-symbols-outlined fs-5">
+                info
+              </span> International Flight price is not included.
+            </div>
+          </div>
+          <div class="tour-policy-bx">
+            <a href="#"> <span class="material-symbols-outlined">
+                mail
+              </span> Add Email</a>
+            <a href="#"><span class="material-symbols-outlined">
+                policy
+              </span> Cancellation Policy</a>
+            <a href="#"><span class="material-symbols-outlined">
+                download
+              </span> Download PDF</a>
+            <a href="#"><span class="material-symbols-outlined">
+                download
+              </span> Print Itinerary PDF</a>
+          </div>
+          <div class="whatsup-bx">
+            <div class="what-icon">
+              <span class="material-symbols-outlined i-w">
+                mode_of_travel
+              </span>
+              <span>
+                <label>Whatsapp Pragya</label>
+                <p class="mb-0">Planned 75 trips so far</p>
+              </span>
+            </div>
+            <div>
+              <span class="material-symbols-outlined">
+                arrow_forward
+              </span>
+            </div>
+          </div>
+          <div class="your-route">
+            <h6 class="text-center">Your Route</h6>
+            <div class="root-direction">
+              <div class="start-from">
+                <div class="f-col">
+                  <div class="static">
+                    <span class="material-symbols-outlined">
+                      flight_land
+                    </span> Arrival at DPS
+                  </div>
+                  <a href="#" class="add-city">
+                    <span class="material-symbols-outlined">
+                      add
+                    </span> Add City
+                  </a>
+                </div>
+                <div class="transfer-by-ferry">
+                  <span class="material-symbols-outlined delete-i">
+                    delete
+                  </span>
+                  <span class="location-name">Nusa Penida</span>
+                  <div class="d-flex flex-row justify-content-between align-items-center gap-2 ms-auto count-">
+                    <button><span class="material-symbols-outlined">
+                        remove
+                      </span></button>
+                    <label class="count-label">1</label>
+                    <button><span class="material-symbols-outlined">
+                        add
+                      </span></button>
+                  </div>
+                </div>
+                <div class="f-col">
+                  <div class="static">
+                    Transfer to Canggu
+                  </div>
+                  <a href="#" class="add-city">
+                    <span class="material-symbols-outlined">
+                      add
+                    </span> Add City
+                  </a>
+                </div>
+                <div class="transfer-by-ferry">
+                  <span class="material-symbols-outlined delete-i">
+                    delete
+                  </span>
+                  <span class="location-name">Canggu</span>
+                  <div class="d-flex flex-row justify-content-between align-items-center gap-2 ms-auto count-">
+                    <button><span class="material-symbols-outlined">
+                        remove
+                      </span></button>
+                    <label class="count-label">1</label>
+                    <button><span class="material-symbols-outlined">
+                        add
+                      </span></button>
+                  </div>
+                </div>
+                <div class="f-col">
+                  <div class="static">
+                    <span class="material-symbols-outlined">
+                      directions_boat
+                    </span> Transfer to ferry
+                  </div>
+                  <a href="#" class="add-city">
+                    <span class="material-symbols-outlined">
+                      add
+                    </span> Add City
+                  </a>
+                </div>
+
+                <div class="transfer-by-ferry">
+                  <span class="material-symbols-outlined delete-i">
+                    delete
+                  </span>
+                  <span class="location-name">Kuta</span>
+                  <div class="d-flex flex-row justify-content-between align-items-center gap-2 ms-auto count-">
+                    <button><span class="material-symbols-outlined">
+                        remove
+                      </span></button>
+                    <label class="count-label">1</label>
+                    <button><span class="material-symbols-outlined">
+                        add
+                      </span></button>
+                  </div>
+                </div>
+                <div class="f-col">
+                  <div class="static">
+                    <span class="material-symbols-outlined">
+                      directions_car
+                    </span> Transfer to car
+                  </div>
+                  <a href="#" class="add-city">
+                    <span class="material-symbols-outlined">
+                      add
+                    </span> Add City
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <div class="bottom-section">
+              <button><span class="material-symbols-outlined">
+                  directions
+                </span> Edit Route</button>
+              <button (click)="openModal()"><span class="material-symbols-outlined">
+                  add_circle
+                </span>Add City</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-add-city-modal *ngIf="isCModalOpen" (close)="closeCityModal()"></app-add-city-modal>
+<app-change-transfer-modal *ngIf="isModalOpen" (close)="closeModal()"></app-change-transfer-modal>
+<app-change-hotel-modal *ngIf="isHModalOpen" (close)="closeHotelModal()"></app-change-hotel-modal>
+<app-change-flight-modal *ngIf="isFModalOpen" (close)="closeFlightModal()"></app-change-flight-modal>
+<app-add-activity-model *ngIf="isActivityModalOpen" (close)="closeActivityModal()"></app-add-activity-model>

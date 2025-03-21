@@ -1,0 +1,138 @@
+.tab-first{
+       width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--tsukham-web-space-2);
+        padding-top: var(--tsukham-web-space-2);
+        padding-bottom: var(--tsukham-web-space-2);
+        overflow-x: scroll;
+        scrollbar-width: none;
+
+        a{
+                min-width: 200px;
+                min-height: 60px;
+                max-height: max-content;
+                border: 1px solid rgb(232, 234, 243);
+                border-radius: var(--tsukham-web-radii-3);
+                padding: var(--tsukham-web-space-1);
+                background-color: rgb(255, 255, 255);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                flex-direction: column;
+                color: var(--tsukham-web-colors-custom02);
+                font-size: var(--tsukham-web-fontSizes-3);
+
+                &:hover{
+                    background-color: var(--tsukham-web-colors-black);
+                    color: white;
+
+                    .attr {
+                        color: #464E67;
+                    }
+                }
+
+                .attr{
+                    color: #464E67;
+                    font-size: var(--tsukham-web-fontSizes-1);
+                }
+                
+        }
+}
+
+.explore-tab{
+    ul{
+            display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-direction: row;
+                list-style: none;
+                 gap: var(--tsukham-web-space-2);
+                 margin-left: 0px;
+                 padding-left: 0px;
+                 border-bottom: 1px solid gainsboro;
+                li{
+                        cursor: pointer;
+                        min-width: max-content;
+                        padding: var(--tsukham-web-space-4) var(--tsukham-web-space-4);
+                        box-shadow: none;
+                        font-family: var(--veho-fonts-manrope);
+                        color: #818181;
+                        font-size: var(--veho-fontSizes-8i);
+                        font-style: normal;
+                        font-weight: 500;
+                        border-bottom: 2px solid transparent;
+
+                    &:hover{
+                        cursor: pointer;
+                        min-width: max-content;
+                        padding: var(--tsukham-web-space-4) var(--tsukham-web-space-4);
+                        border-bottom: 2px solid black;
+                        box-shadow: none;
+                        color: black;
+                    }
+
+                    &.active{
+                        border-bottom: 2px solid black;
+                        color: black;
+                    }
+                }
+    }   
+}
+
+.container {
+    h4 {
+        i {
+            font-family: "Yellowtail", cursive;
+            color: #eca846;
+            margin-right: 10px;
+            font-size: 2.5rem;
+        }
+    }
+    h3 {
+        i {
+            font-family: "Yellowtail", cursive;
+            color: #eca846;
+            margin-right: 5px;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media(max-width:768px){
+    .explore-tab ul li{
+        font-size: 14px;
+    }
+    .tab-first{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);        
+        a{
+           min-width:50%;
+           height:50px;
+        }
+    }
+
+    .container h4 i{
+        font-size: 2rem;
+    }
+    .container h4{
+        font-size: 1.2rem;
+    }
+    .explore-tab ul{
+        overflow: auto;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        li{
+            padding-inline: 5px;
+        }
+    }
+    .explore-tab ul::-webkit-scrollbar {
+        display: none;
+      }
+      .explore-tab[_ngcontent-ng-c3190975055] ul[_ngcontent-ng-c3190975055] li[_ngcontent-ng-c3190975055]:hover{
+        padding-inline: 5px;
+      }
+}

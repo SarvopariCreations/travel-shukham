@@ -1,0 +1,141 @@
+<div class="container">
+    <div class="col-sm-12 d-flex align-items-center justify-content-start">
+        <h4>EXPLORE <i>ALL</i> PACKAGES</h4>
+    </div>
+    <div class="col-sm-12 explore-tab mt-2 mt-sm-4">
+        <ul>
+            <li (click)="onTabClick('packages')" [class.active]="activeTab === 'packages'">Package</li>
+            <li (click)="onTabClick('destinations')" [class.active]="activeTab === 'destinations'">Destinations</li>
+            <li (click)="onTabClick('thingsToDo')" [class.active]="activeTab === 'thingsToDo'">Things to do</li>
+            <li (click)="onTabClick('placesToVisit')" [class.active]="activeTab === 'placesToVisit'">Place to visit</li>
+        </ul>
+        <div class="tab-section-preview">
+            <div *ngIf="activeTab === 'packages'" class="tab-first">
+                <a href="#" routerLink="/package-list">Maldives Packages</a>
+                <a href="#" routerLink="/package-list">Bali Packages</a>
+                <a href="#" routerLink="/package-list">Thailand Packages</a>
+                <a href="#" routerLink="/package-list">Dubai Packages</a>
+                <a href="#" routerLink="/package-list">Singapore Packages</a>
+                <a href="#" routerLink="/package-list">Maldives Packages</a>
+                <a href="#" routerLink="/package-list">Bali Packages</a>
+                <a href="#" routerLink="/package-list">Thailand Packages</a>
+                <a href="#" routerLink="/package-list">Dubai Packages</a>
+                <a href="#" routerLink="/package-list">Maldives Packages</a>
+                <a href="#" routerLink="/package-list">Bali Packages</a>
+                <a href="#" routerLink="/package-list">Thailand Packages</a>
+                <a href="#" routerLink="/package-list">Dubai Packages</a>
+                <a href="#" routerLink="/package-list">Singapore Packages</a>
+                <a href="#" routerLink="/package-list">Maldives Packages</a>
+                <a href="#" routerLink="/package-list">Bali Packages</a>
+                <a href="#" routerLink="/package-list">Thailand Packages</a>
+                <a href="#" routerLink="/package-list">Dubai Packages</a>
+            </div>
+            <div *ngIf="activeTab === 'destinations'" class="tab-first">
+                <a href="#" routerLink="/package-list">
+                    <span>Bali Attractions</span>
+                    <span class="attr">180+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bangkok Attractions</span>
+                    <span class="attr">150+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Thailand Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Maldives Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bali Attractions</span>
+                    <span class="attr">180+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bangkok Attractions</span>
+                    <span class="attr">150+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Thailand Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Maldives Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bali Attractions</span>
+                    <span class="attr">180+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bangkok Attractions</span>
+                    <span class="attr">150+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Thailand Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Maldives Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bali Attractions</span>
+                    <span class="attr">180+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Bangkok Attractions</span>
+                    <span class="attr">150+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Thailand Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+                <a href="#" routerLink="/package-list">
+                    <span>Maldives Attractions</span>
+                    <span class="attr">100+ attractions</span>
+                </a>
+            </div>
+            <div *ngIf="activeTab === 'thingsToDo'" class="tab-first">
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+                <a href="#" routerLink="/package-list">Things to do in Singapore</a>
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+                <a href="#" routerLink="/package-list">Things to do in Singapore</a>
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+                <a href="#" routerLink="/package-list">Things to do in Singapore</a>
+                <a href="#" routerLink="/package-list">Things to do in Maldives</a>
+                <a href="#" routerLink="/package-list">Things to do in Bali</a>
+                <a href="#" routerLink="/package-list">Things to do in Thailand</a>
+                <a href="#" routerLink="/package-list">Things to do in Dubai</a>
+            </div>
+            <div *ngIf="activeTab === 'placesToVisit'" class="tab-first">
+                <a href="#" routerLink="/package-list">Place to visit Maldives</a>
+                <a href="#" routerLink="/package-list">Place to visit Bali</a>
+                <a href="#" routerLink="/package-list">Place to visit Thailand</a>
+                <a href="#" routerLink="/package-list">Place to visit Dubai</a>
+                <a href="#" routerLink="/package-list">Place to visit Singapore</a>
+                <a href="#" routerLink="/package-list">Place to visit Maldives</a>
+                <a href="#" routerLink="/package-list">Place to visit Bali</a>
+                <a href="#" routerLink="/package-list">Place to visit Thailand</a>
+                <a href="#" routerLink="/package-list">Place to visit Dubai</a>
+            </div>
+        </div>
+    </div>
+</div>

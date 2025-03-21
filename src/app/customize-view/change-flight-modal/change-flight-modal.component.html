@@ -1,0 +1,268 @@
+<div class="side-panel-controller">
+    <button class="close-icon" (click)="closeModal()">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+    <div class="side-panel-wrapper">
+        <div class="side-panel-top-section">
+            <div class="transfer-listing-header mb-3">
+                <h5>Change Flight</h5>
+            </div>
+            <div class="flight-options-layout">
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Airline
+                        </button>
+                        <ul class="dropdown-menu p-3" aria-labelledby="dropdownCheckboxButton">
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="option1">
+                                    <label class="form-check-label" for="option1">Air india Express</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="option2">
+                                    <label class="form-check-label" for="option2">
+                                        Indigo
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="option3">
+                                    <label class="form-check-label" for="option3">Air India</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle  w-100" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Departure Time
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Any</a></li>
+                            <li><a class="dropdown-item" href="#">Before 6AM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">After 6AM</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle  w-100" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Arrival Time
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Any</a></li>
+                            <li><a class="dropdown-item" href="#">Before 6AM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">After 6AM</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle  w-100" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            No. of Stops
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Any</a></li>
+                            <li><a class="dropdown-item" href="#">Before 6AM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">6 AM - 12PM</a></li>
+                            <li><a class="dropdown-item" href="#">After 6AM</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flight-option-change">
+            <div class="d-flex flex-row align-items-center mb-3">
+                <label>New Delhi ↔ Kochi | <span class="gray1">Select Flights to change</span></label>
+                <ul class="flight-option-tab">
+                    <li [ngClass]="{ 'active': selectedTab === 'departure' }" (click)="selectTab('departure')">Departure
+                    </li>
+                    <li [ngClass]="{ 'active': selectedTab === 'return' }" (click)="selectTab('return')">Return</li>
+                </ul>
+            </div>
+            <div class="both-pane">
+                <div class="left-pane" [ngClass]="{ 'highlight': selectedTab === 'departure' }">
+                    <div class="left-pane-search-inside">
+                        <div class="col-sm-6">
+                            <b>Departure</b>New Delhi to Kochi | 02 Feb, Sun
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle  w-100" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Departure Time
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                                        <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                                        <li><a class="dropdown-item" href="#">Popularity</a></li>
+                                        <li><a class="dropdown-item" href="#">User Rating: High to Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-dtl-info">
+                        <div class="flight-row-body" *ngFor="let flight of flights"
+                            [class.selected]="flight.isSelected">
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flightSelection"
+                                        [id]="'flight-' + flight.id" [checked]="flight.isSelected"
+                                        (change)="selectFlight(flight.id)" />
+                                    <label class="form-check-label" [for]="'flight-' + flight.id">
+                                        {{ flight.airline }}
+                                    </label>
+                                </div>
+                                <div class="flight-price-row">
+                                    <div class="d-flex flex-column">
+                                        <h5>₹ {{ flight.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flight-row-airline-details">
+                                <div class="flight-row-airline-logo">
+                                    <img [src]="flight.logo" [alt]="flight.airline" />
+                                </div>
+                                <div class="flight-row-right-details">
+                                    <div class="flight-row-basic-details">
+                                        <div class="flight-row-right-details-timing">
+                                            <div class="flight-row-timing">
+                                                <p>{{ flight.departureDate }}</p>
+                                                <p>{{ flight.arrivalDate }}</p>
+                                            </div>
+                                            <div class="flight-dates">
+                                                <div class="flight-date-text">{{ flight.departureTime }}</div>
+                                                <div class="flight-row-airline-path">
+                                                    <div class="flight-air">
+                                                        <span class="material-symbols-outlined">flight_takeoff</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flight-date-text">{{ flight.arrivalTime }}</div>
+                                            </div>
+                                            <div class="flight-row-airports">
+                                                <p>{{ flight.from }}</p>
+                                                <p>{{ flight.to }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="view-detail-row d-flex justify-content-between">
+                                <div>
+                                    <span *ngFor="let icon of flight.baggageIcons" class="material-symbols-outlined">
+                                        {{ icon }}
+                                    </span>
+                                </div>
+                                <a href="#" class="text-decoration-none">View Details</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="right-pane" [ngClass]="{ 'highlight': selectedTab === 'return' }">
+                    <div class="left-pane-search-inside">
+                        <div class="col-sm-6">
+                            <b>Return</b>Kochi to New Delhi | 02 Feb, Sun
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="col">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle  w-100" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Departure Time
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                                        <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                                        <li><a class="dropdown-item" href="#">Popularity</a></li>
+                                        <li><a class="dropdown-item" href="#">User Rating: High to Low</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flight-dtl-info">
+
+                        <div class="flight-row-body" *ngFor="let flight of flights"
+                            [class.selected]="flight.isSelected">
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flightSelection"
+                                        [id]="'flight-' + flight.id" [checked]="flight.isSelected"
+                                        (change)="selectFlight(flight.id)" />
+                                    <label class="form-check-label" [for]="'flight-' + flight.id">
+                                        {{ flight.airline }}
+                                    </label>
+                                </div>
+                                <div class="flight-price-row">
+                                    <div class="d-flex flex-column">
+                                        <h5>₹ {{ flight.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flight-row-airline-details">
+                                <div class="flight-row-airline-logo">
+                                    <img [src]="flight.logo" [alt]="flight.airline" />
+                                </div>
+                                <div class="flight-row-right-details">
+                                    <div class="flight-row-basic-details">
+                                        <div class="flight-row-right-details-timing">
+                                            <div class="flight-row-timing">
+                                                <p>{{ flight.departureDate }}</p>
+                                                <p>{{ flight.arrivalDate }}</p>
+                                            </div>
+                                            <div class="flight-dates">
+                                                <div class="flight-date-text">{{ flight.departureTime }}</div>
+                                                <div class="flight-row-airline-path">
+                                                    <div class="flight-air">
+                                                        <span class="material-symbols-outlined">flight_takeoff</span>
+                                                    </div>
+                                                </div>
+                                                <div class="flight-date-text">{{ flight.arrivalTime }}</div>
+                                            </div>
+                                            <div class="flight-row-airports">
+                                                <p>{{ flight.from }}</p>
+                                                <p>{{ flight.to }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="view-detail-row d-flex justify-content-between">
+                                <div>
+                                    <span *ngFor="let icon of flight.baggageIcons" class="material-symbols-outlined">
+                                        {{ icon }}
+                                    </span>
+                                </div>
+                                <a href="#" class="text-decoration-none">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

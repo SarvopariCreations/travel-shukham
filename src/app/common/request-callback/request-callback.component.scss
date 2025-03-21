@@ -1,0 +1,31 @@
+// .modal{
+//     display: block !important;
+//     opacity: 1 !important;
+// }
+
+.modal-dialog{
+    max-width: 757px !important;
+    margin-right: 0px;
+}
+
+.modal.fade .modal-dialog{
+    transform: translate(0, 0px);
+}
+
+.modal-body{
+    padding: 0px;
+}
+.modal-header{
+    padding-left: 0px;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 0px;
+}
+.modal-content{
+    overflow: hidden;
+}
+
+.request-callback-btn{
+    background-color: #eba745;
+    color: white;    
+}

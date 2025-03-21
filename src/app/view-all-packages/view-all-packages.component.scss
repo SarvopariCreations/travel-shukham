@@ -1,0 +1,168 @@
+.ts-view-packages-list-wrap{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+
+    .logo{
+        img{
+            max-width: 140px;
+        }
+    }
+    .ts-package-list{
+        margin-top: 2rem;        
+    }
+
+    .ts-package-header-row{
+        label{
+            color: white;
+            font-size: 1.5rem;
+        }
+        p{
+            color: white;            
+        }
+    }
+
+    .view-package-all{
+        color: white;        
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: .54px;
+        white-space: nowrap;
+        background: linear-gradient(93deg, #ffd599, #eca846);
+        padding:1rem;
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        border: none;   
+        width: max-content;
+        margin: 2rem auto;
+        cursor: pointer;
+    }
+}
+
+.ts-view-package-header{
+    background-color: white;
+    padding: 1rem;
+    width: 100%;    
+    position:sticky;
+    top: 0px;
+    z-index: 111;
+}
+
+.close-icon{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    text-decoration: none;
+    color: black;
+
+    span{
+        font-size: 1rem;
+        margin-top:1px;
+    }
+}
+
+
+.ts-list-of-hotel-row{
+    // background-color: #f5f5f5;
+    // padding: 1rem;
+
+    h4{
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .ts-hotel-list-item{
+        background: #fff;
+        border-bottom: 1px solid #333333;
+        border-top: 1px solid #333333;
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        .ts-hotel-list-img {
+                width: 100%;        
+                img {
+                    height: 180px;
+                    width: 100%;
+                }
+            }
+    }
+}
+.ts-hotel-list-detail{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    p{        
+        margin-bottom: 0px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgb(128, 128, 128);
+    }
+}
+
+.ts-hotel-rating{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    align-items: center;
+
+    .count-rating{
+        background-color: #a3875c;
+        padding:0px 5px;
+        border-radius: 5px;
+        color: white;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    .total-review{
+        font-size: 12px;
+        color: black;
+        text-decoration: none;
+    }
+    .title{        
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        color: #a3875c;
+        text-decoration: none;  
+    }
+}
+
+.ts-hotel-price{
+    display: flex;
+    flex-direction: column;
+
+    .price{
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .per-head{
+        font-size:14px;
+        color: rgb(128, 128, 128);
+    }
+}
+
+@media(max-width:768px){
+    .ts-view-packages-list-wrap[_ngcontent-ng-c828470960] .ts-package-list[_ngcontent-ng-c828470960]{
+        margin-top: 1rem;
+    }
+}

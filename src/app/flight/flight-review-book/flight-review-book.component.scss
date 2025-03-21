@@ -1,0 +1,586 @@
+::ng-deep body{
+    background-color: #f2f2f2;
+}
+.trip-confimation-wrap{
+    display: grid;
+    grid-template-columns: 72% 25%;
+    gap: 3%;
+    align-items: start;
+    
+    .flight-detail-blk{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 4px;
+        overflow: hidden;
+        background-size: 100px;
+        gap: 1.5rem;
+
+        .card{
+            box-shadow: 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border: none;
+            padding: 1rem;
+        }
+    }
+
+    .trip-confitmation-payment{        
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;  
+        gap: 1rem;
+
+
+
+        .conformation-box{
+            width: 100%;
+            box-shadow: 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;  
+            background-color: white;
+            padding: 1rem;
+        }
+        .promo-code-wrap{
+            width: 100%;
+            box-shadow: 0 0.3px 0.4px rgba(0, 0, 0, 0.025), 0 0.9px 1.5px rgba(0, 0, 0, 0.05), 0 3.5px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;  
+            background-color: white; 
+            padding: 1rem;
+        }
+    }
+}
+
+.flight-detail-blk{
+    display: flex;
+    flex-direction: column;
+}
+.schedule-day{
+    background-color: rgb(255, 237, 209);
+    border-radius: 20px;
+    padding-inline: 1rem;
+    padding-block: 5px;
+    margin-right: 5px;
+}
+
+.left-bar{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100%;
+    width: 300px;
+}
+
+.view-rules{
+    margin-top: auto;
+
+    p{
+        margin-bottom: 0px;
+    }
+    .refund-tag{    
+        background: linear-gradient(
+            98deg,
+            rgb(255, 81, 47) 28%,
+            rgb(221, 36, 118) 100%);
+            color: white;
+            padding: 5px 10px;            
+    }
+}
+
+.flight-itenary-hdr{
+    display: flex;
+    justify-content: space-between;
+    .air-img{
+        width: 30px;
+        background-size: 100% 100%;
+        height: 30px;    
+        img{
+            width:30px;
+            object-fit: contain;
+        }
+    }
+
+    .aircraft-type{
+        background-color: rgb(242 242 242);
+        border-color: rgb(117, 117, 117);
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 14px;
+    }
+}
+
+.flight-itenary-wrap{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width: 100%;
+}
+
+.itenary-left{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 14px;
+
+    .f-width{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+
+    
+    &::after{
+        content: "";
+        position: absolute;
+        top: 20px;
+        height: calc(100% - 40px);
+        border-left: 2px dashed #eba745;
+        left:47px;
+    }
+}
+.flight-itenary{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+
+
+    .time-info-ui{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .layover-circle{
+    border: 2px solid #eba745;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-flex;
+    background-color: #eba745;
+    position: relative;
+    top:0px;
+    margin: 0px;
+}
+.layover{
+    padding: 7px 20px;
+    margin-left:46px;
+}
+
+.baggage-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.baggage-section{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+}
+
+
+.icons-bar{
+    width: max-content;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    border-color: rgb(138, 205, 255);
+    /* background-color: rgb(234, 245, 255); */
+    gap: 10px;
+    border: 1px solid #eca846;
+    margin-top: 1rem;
+    color: #454343;
+
+    span{
+        font-size: 16px;
+    }
+}
+
+.baggage-tag {
+    background-color: rgb(236, 245, 250); border: 1px solid rgb(213, 231, 251);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: center;
+    padding:10px 1rem;
+    p{
+        margin-bottom: 0px;
+        width: 70%;
+        line-height: 1.5;
+    }
+    
+    .add-btn{
+        background-color: transparent;
+        border: none;
+        color: #008cff;
+    }
+}
+
+
+.component-container{
+    width: 100%;
+    // box-shadow: 0 3px 30px 0 rgba(0, 0, 0, .1);
+    background-color: #fff;
+    border-radius: 2px;    
+
+    p{
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        gap: 5px;        
+    }
+
+    .important-info-top
+    {
+        cursor: pointer;        
+    }
+    .infoList {
+        margin: 10px 0 0 40px;
+        padding: 0 20px 20px 0;
+        list-style-type: disc;
+        margin-left: 1rem;
+        li{
+            margin: 0;
+            padding: 0;
+            line-height: 18px;
+            font-size:12px;
+            color: #000;
+        }
+    }
+    .info-list{
+        margin-left: 1rem;
+    }
+    .tnc-container{
+        font-size: 14px;
+    }
+}
+
+.list-of-services{
+    margin-top:1rem;
+}
+.trip-facility{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;        
+    .box{        
+        border-radius: 5px;
+        background-color: #fff;
+        border: 1px solid #dedede;
+        display: flex;  
+        align-items: center;  
+        padding: 10px;
+        gap: 10px;
+        
+        label{
+            font-weight:500;
+        }
+
+        p{
+            margin-bottom: 0px;
+        }
+    }
+}
+.min-price-tag{
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    b{
+        font-weight: 600;
+        font-size: 1.8rem;
+        display: flex;
+    }
+}
+.trip-secure-section{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dedede;
+    padding: 1rem;
+    background-color: #f9f9f9;
+
+    h5{
+        display: flex;
+        gap: 5px;
+
+        span{
+            color: #eba745;
+        }
+    }
+    p{
+        margin-bottom: 0px;
+    }
+}
+.trip-hdr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
+    h5{
+        display: flex;
+        gap: 5px;
+
+        span{
+            color: #008cff;
+        }
+    }
+}
+
+.view-all-benefits{
+    font-size: 14px;
+    display: flex;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+
+.add-person-details{
+    border: 1px solid #d9d9d9;
+    padding: 1rem;    
+}
+
+.fare-count-price{
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    label{
+        font-weight: 600;
+    }
+    .fare-price-label{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+}
+
+
+.cancellation-data-policy{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    table{
+        width: 100%;
+        border: 1px solid #dedede;
+        border-color: #d9d9d9;
+
+
+        tr,td{
+            border: 1px solid #dedede;
+            padding: 1rem;
+        }
+    }
+}
+
+.apply-btn{
+    background: linear-gradient(
+        98deg,
+        rgb(255, 81, 47) 28%,
+        rgb(221, 36, 118) 100%);
+        color: white;
+        padding:10px 10px;     
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+}
+.view-coupon-all{
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-decoration: none;
+    width: 100%;
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-service-btn{
+    background-color: #eba745;
+    color: white;
+    border-radius: 20px;
+    padding:5px 1rem;
+    width: max-content;
+    text-decoration: none;
+}
+
+.indigo-card{
+    background-color:#4B0082 !important;
+    border: none !important;
+}
+
+.continue-btn {
+    background: linear-gradient(98deg,
+            rgb(255, 81, 47) 28%,
+            rgb(221, 36, 118) 100%);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+}
+
+@media(max-width:768px){
+    .trip-confimation-wrap{
+        grid-template-columns:100%;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+    .top-70{
+        margin-top: 70px;
+    }
+    .trip-confimation-wrap .flight-detail-blk .card{
+        flex-direction:  column !important;
+    }
+    .left-bar{
+        width: 100%;
+        border-radius: 0.5rem;
+        background: linear-gradient(rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 58.76%),    linear-gradient(      150deg,      rgb(192, 230, 182) 35.21%,      rgb(159, 227, 234) 55.95%,      rgba(0, 0, 0, 0) 84.58%);
+        border: 1px solid rgb(159, 227, 234);
+        p{
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .flight-itenary-hdr{
+        flex-direction: column;
+    }
+    .flight-itenary-wrap{
+        gap:1rem;
+    }
+    .flight-itenary{
+        gap: 1rem;
+    }
+    .flight-itenary .baggage-info{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cancellation-data-policy{
+        h5{
+            font-size: 1rem;
+        }
+        label{
+            font-size: 14px;
+        }
+    }
+    .min-price-tag{
+        flex-direction: column;
+        align-items: center;
+    }
+    .view-all-benefits{
+        margin: 0px auto;
+    }
+    .trip-facility{
+        grid-template-columns: 100%;
+    }
+    .trip-confimation-wrap .flight-detail-blk{
+        gap:1rem
+    }
+    .traveller-details-wrap{
+        input, select{
+            margin-bottom:10px;
+        }
+    }
+    .trip-confimation-wrap[_ngcontent-ng-c1830255042] .flight-detail-blk[_ngcontent-ng-c1830255042] .card[_ngcontent-ng-c1830255042]{
+        box-shadow: none;
+    background-color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #dfdfdf;
+    }
+    .add-person-details{
+        padding: 0px;
+        border: none;
+    }
+    .add-service-btn{
+        width: 100%;
+        text-align: center;
+    }
+    .indigo-card{
+        font-size: 14px;
+    }
+    .trip-confimation-wrap[_ngcontent-ng-c2074396010] .flight-detail-blk[_ngcontent-ng-c2074396010] .card[_ngcontent-ng-c2074396010]{
+        border-radius: 1rem;
+        box-shadow: none;
+        border: 1px solid #dfdfdf;
+    }
+    .cancellation-data-policy[_ngcontent-ng-c2074396010] table[_ngcontent-ng-c2074396010]{
+        font-size: 14px;
+        td{
+            padding: 5px;
+        }
+    }
+    .component-container{
+        font-size: 14px;
+    }
+    .important-info-top{
+        h5{
+            font-size: 1rem;
+        }
+    }
+    .view-rules[_ngcontent-ng-c2074396010] .refund-tag[_ngcontent-ng-c2074396010]{
+        background: transparent;
+        color: white;
+        padding: 0px;
+        color: black;
+        text-decoration: underline;
+    }
+    .schedule-day{
+background-color: white !important;
+    }
+    .conformation-box{
+        h5{
+            font-size: 1.2rem;
+        }
+    }
+    .icons-bar{
+        background-color: transparent;
+        border: none;
+        margin-bottom: 0.5rem !important;
+    }
+    .trip-confimation-wrap[_ngcontent-ng-c2074396010] .trip-confitmation-payment[_ngcontent-ng-c2074396010] .promo-code-wrap[_ngcontent-ng-c2074396010]{
+        border-radius: 1rem;
+        box-shadow: none;
+        border: 1px solid #dfdfdf;
+        h5{
+            font-size: 1.2rem;
+        }  
+    }
+    .trip-confimation-wrap[_ngcontent-ng-c2074396010] .trip-confitmation-payment[_ngcontent-ng-c2074396010] .conformation-box[_ngcontent-ng-c2074396010]
+    {
+        border-radius: 1rem;
+        box-shadow: none;
+        border: 1px solid #dfdfdf;
+    }
+    .continue-btn{
+        border-radius: 1rem;
+    }
+    .baggage-tag{
+        background-color: transparent;
+        border-radius: 0.5rem;
+    }
+    .itenary-left{
+        background: #f9f9f9;
+        padding: 1rem;  
+        border-radius: 0.5rem;
+        &::after{
+            left: 63px;  
+        }  
+    }
+}

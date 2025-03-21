@@ -1,0 +1,94 @@
+<owl-carousel-o [options]="customOptions">
+  <ng-container *ngFor="let image of images">
+    <ng-template carouselSlide>
+      <div class="slide-content">
+        <!-- <img [src]="image.src" alt="{{image.title || 'Carousel Image'}}" class="ts-thumbnail-img">
+        <div class="image-info">
+          <h5 *ngIf="image.title">{{image.title}}</h5>
+          <p *ngIf="image.price" class="tag">{{image.price}}</p>
+          <div *ngIf="image.rating" class="rating">
+            <span>{{image.rating}}</span> Ratings
+          </div>
+          <p *ngIf="image.description" class="description">{{image.description}}</p>
+          <div *ngIf="image.exclusive" class="exclusive-highlight">
+            <svg viewBox="0 0 24 24" fill="none" class="SvgIcon__StyledSvgIcon-sc-ks6tpc-0 ikHLUA">
+              <path fill="currentColor" fill-rule="evenodd"
+                d="M2 12C2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10S2 17.5 2 12Zm15.5111-2.0785c.2998 0 .5396.3598.4797.6595 0 .1199-.06.2399-.1799.2998l-2.4581 2.3982.5995 3.4173c.06.3597-.1798.6595-.4796.7195h-.1199c-.1199 0-.2398 0-.2998-.06l-3.0576-1.6187-3.0577 1.6187c-.2997.1799-.6595.06-.8393-.2398-.06-.1199-.06-.2398-.06-.3597l.5996-3.4174-2.4581-2.3981c-.2398-.2399-.2398-.5996 0-.8394.06-.1199.1798-.1799.3597-.1799L9.957 9.442l1.4988-3.1176c.1799-.2998.5396-.4196.8393-.2398.12.06.1799.12.2399.2398l1.5588 3.1176 3.4173.4796Z"
+                clip-rule="evenodd"></path>
+            </svg> Exclusive Premium
+          </div>
+          <button *ngIf="image.viewButton">View</button> -->
+
+        <div class="tour-listing__card" routerLink="/customize-view">
+          <a href="#" class="tour-listing__card-image-box">
+            <img [src]="image.src" alt="{{image.title || 'Carousel Image'}}" class="ts-thumbnail-img" decoding="async"
+              width="370" height="200">
+            <div class="tour-listing__card-btn-group">
+              <div class="tour-listing__card-discount">5% off</div>
+              <div class="tour-listing__card-featured">Featured</div>
+            </div>
+            <div class="tour-listing__card-btn-group">
+              <div class="tour-listing__card-discount">5% off</div>
+              <div class="tour-listing__card-featured">Featured</div>
+            </div>
+            <div class="tour-listing__card-image-overlay"></div>
+          </a>
+          <div class="wishlist-icon">
+            <a href="javascript:void(0)" data-post_id="872"
+              class="tour-listing__card-wishlist trevlo-ajax-wishlist add-wishlist">
+              <span class="material-symbols-outlined">
+                favorite
+              </span>
+            </a>
+          </div>
+          <div class="tour-listing__card-content">
+            <h3 class="tour-listing__card-title" *ngIf="image.title">
+              <a href="#">{{image.title}}</a>
+            </h3>
+            <p class="tour-listing__card-text text-small">There are many variations of passages of Lorem Ipsum agtilable
+            </p>
+            <div class="tour-listing__card-inner-content">
+              <div class="tour-listing__card-review-box">
+                <span class="material-symbols-outlined">
+                  star_half
+                </span>
+                <p class="tour-listing__card-review-text text-small">4.5 (2 Reviews)</p>
+              </div>
+              <div class="tour-listing__card-location-box">
+                <span class="material-symbols-outlined">
+                  location_on
+                </span>
+                <p class="tour-listing__card-location-text text-small">Main Street, Brooklyn, NY</p>
+              </div>
+              <div class="tour-listing__card-divider"></div>
+              <div class="tour-listing__card-bottom">
+                <div class="tour-listing__card-bottom-left">
+                  <div class="tour-listing__card-day">
+                    <span class="material-symbols-outlined">
+                      schedule
+                    </span>
+                    <p class="tour-listing__card-day-text text-small">
+                      3 beds </p>
+                  </div>
+                  <div class="tour-listing__card-day">
+                    <span class="material-symbols-outlined">
+                      group
+                    </span>
+                    <p class="tour-listing__card-people-text text-small">
+                      12 + </p>
+                  </div>
+                </div>
+                <div class="tour-listing__card-bottom-right">
+                  <h4 class="tour-listing__card-price">
+                    <span class="currency_amount" data-amount="38"><span class="currency_symbol">$</span>38.00</span>
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

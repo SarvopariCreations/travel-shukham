@@ -1,0 +1,184 @@
+.side-panel-controller {
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .side-panel-wrapper {
+        top: auto;
+        transform: unset;
+        padding: 0px 0px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        margin-bottom: unset;
+        overflow-x: hidden;
+        width: 800px;
+        position: absolute;
+        height: auto;
+        background-color: white;
+        bottom: auto;
+        max-height: 500px;
+        /* transform: translateX(-70%); */
+    }
+
+    .side-panel-top-section {
+        padding: 15px 15px 0 15px;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0px;
+        background: #fff;
+        z-index: 13;
+        padding-bottom: 1rem;
+    }
+
+    .close-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        background-color: transparent;
+        border: none;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.view-policy-wrap-modal {
+
+    .flight-details {
+        border-radius: 0px 0px 4px 4px;
+        border: 1px solid #dfdfdf;
+        width: 100%;
+        margin-top: 1px;
+        background-color: white;
+        padding: 1rem;
+
+        .flight-details-head {
+            color: #000;
+            font-weight: 500;
+            margin-bottom: 0px;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .policy-tab {
+                width: 200px;
+                display: flex;
+                align-items: center;
+                background: #f4f4f4;
+                border-radius: 5px;
+                justify-content: center;
+                padding: 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #000;
+                    color: white;
+                }
+            }
+        }
+
+        .flight-details-info {
+            padding: 12px;
+        }
+
+        .accordion-header {
+            padding: 1rem;
+            background: skyblue;
+            color: white;
+
+            .flight-air-icon {
+                width: 30px;
+                height: 30px;
+                background-size: 100% 100%;
+            }
+
+            button {
+                display: flex;
+                gap: 5px;
+            }
+
+            .accordion-button::after {
+                background-image: url(../../../assets/arrow-black.svg);
+                font-size: 1rem;
+                margin-left: auto;
+                transition: transform 0.2s;
+                background-size: 100%;
+                width: 20px;
+                height: 20px;
+                transform: rotate(0deg);
+            }
+
+            .accordion-button.collapsed::after {
+                transform: rotate(180deg);
+                /* Rotates the arrow to point right */
+            }
+
+        }
+    }
+
+    .date-change-info {
+        border-bottom: 1px solid #dfdfdf;
+        display: flex;
+        align-items: center;
+
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .flight-details-info-left {
+        min-width: 250px;
+        max-width: 300px;
+        padding: 12px;
+        border-right: 1px solid #dfdfdf;
+
+        &:not(:first-child) {
+            border-right: 0px;
+        }
+    }
+
+    .flight-details-info-right {
+        padding: 12px;
+    }
+
+    .info-strip {
+        padding: 6px 12px;
+        background-color: #ffe3d5;
+        border-radius: 0px;
+        width: 100%;
+        font-size: calc(var(--font-scale, 1)* 12px);
+    }
+
+    .polcy-flight-related {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #d9d9d9;
+        border-radius: 5px 5px 0px 0px;
+    }
+}
+
+
+@media(max-width:768px){
+    .side-panel-controller .side-panel-wrapper {
+        width: 90%;
+    }
+    .view-policy-wrap-modal .flight-details{
+        overflow: auto;
+    }
+    .side-panel-controller{
+        z-index: 1111;
+    }
+}

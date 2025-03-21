@@ -1,0 +1,43 @@
+@import url(../../../../src/app/common.scss);
+
+.trevlo-btn svg{
+font-size: 1.5rem;
+}
+
+.ref-button{
+    gap: 1rem;
+    svg{
+        path{
+        fill: white;
+        }
+    }
+}
+
+.unique--ref{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    label{
+        font-size: 1.5rem;
+    }
+    .ref-code{
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #eba746;
+            width: max-content;
+            flex-wrap: wrap;
+            margin: 1rem auto;
+            padding: 1rem 1.5rem;
+            font-size: 1.5rem;
+            background-color: rgba(235, 167, 70, 0.1);
+            gap: 1rem;
+
+            b{
+                display: flex;
+                height: auto;
+            }
+    }
+}

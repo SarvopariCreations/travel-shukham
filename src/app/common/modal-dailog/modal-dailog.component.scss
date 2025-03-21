@@ -1,0 +1,100 @@
+.selection-count {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 10px;
+
+    > label{
+        color: #777777;
+    }
+}
+
+.edit-link {
+    background-color: transparent;
+    font-size: 0.8rem;
+    color: red;
+    border: none;
+}
+
+.gender-selection {
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #c2c2c2;
+        padding: 10px;
+        border-radius: 30px;
+        background: white;
+
+        span {
+            font-size: 1rem;
+        }
+    }
+
+    .count-label{
+        width: 20px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.modal-footer {
+    .btn-outline-secondary {
+        border-color: black;
+        color: black;
+        padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+                font-weight: 500;
+
+        &:hover {
+            border-color: #eca846;
+                color: #eca846;
+                background-color: transparent;
+        }
+    }
+
+    .btn-primary {
+        border-color: black;
+        color: white;
+        background-color: black;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        &:hover {
+        background: linear-gradient(93deg, #ffd599, #eca846);
+            border-color: #eca846;
+        }
+    }
+}
+
+.modal-body{
+gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: calc(70vh - 30px);
+}
+
+@media (max-width: 768px) {
+    .modal-body{
+        height: auto;
+    }
+    .modal-footer{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .modal-footer .btn-primary, .modal-footer .btn-outline-secondary{
+        font-size: 1rem;
+        padding: 1rem;
+        width: 100%;
+    }
+}

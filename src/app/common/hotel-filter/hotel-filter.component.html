@@ -1,0 +1,347 @@
+<form method="get" action="#" id="hotel-query-form">
+    <div class="filter-area">
+        <div class="row">
+
+            <div class="col-xl-4 col-md-6 d-flex justify-content-center divider">
+                <!-- search destination place section -->
+                <div class="single-search-box">
+                    <div class="searchbox-input">
+                        <div class="custom-select-dropdown">
+                            <div class="col-sm-12 search-area">
+                                <input type="text"
+                                    placeholder="Where - Search destination or place"
+                                    (click)="toggleSection('hotel')">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- search destination hover section-->
+                <div class="dropdown search-destination-section where-destination-section"
+                    *ngIf="isHotelSectionVisible" (click)="onClickInside($event)">
+                    <div class="recent-searches">
+                        <div class="col-sm-12">
+                            <div class="row mb-3">
+                                <div class="col-sm-12">Recent searches</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="recent-search-bx">
+                                        <div class="recent-icon">
+                                            <span class="material-symbols-outlined">
+                                                schedule
+                                            </span>
+                                        </div>
+                                        <div class="text-recent-bx">
+                                            <div class="d-flex flex-column">
+                                                <label>Ironstone Romantic Couples
+                                                    Retreat</label>
+                                                <div class="short-detail"><span>8-10
+                                                        Sep</span> <span>2 Adults</span>
+                                                    <span>1
+                                                        room</span>
+                                                </div>
+                                            </div>
+                                            <span class="material-symbols-outlined close-i">
+                                                close
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="recent-search-bx">
+                                        <div class="recent-icon">
+                                            <span class="material-symbols-outlined">
+                                                schedule
+                                            </span>
+                                        </div>
+                                        <div class="text-recent-bx">
+                                            <div class="d-flex flex-column">
+                                                <label>Ironstone Romantic Couples
+                                                    Retreat</label>
+                                                <div class="short-detail"><span>8-10
+                                                        Sep</span> <span>2 Adults</span>
+                                                    <span>1
+                                                        room</span>
+                                                </div>
+                                            </div>
+                                            <span class="material-symbols-outlined close-i">
+                                                close
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="recent-search-bx">
+                                        <div class="recent-icon">
+                                            <span class="material-symbols-outlined">
+                                                schedule
+                                            </span>
+                                        </div>
+                                        <div class="text-recent-bx">
+                                            <div class="d-flex flex-column">
+                                                <label>Ironstone Romantic Couples
+                                                    Retreat</label>
+                                                <div class="short-detail"><span>8-10
+                                                        Sep</span> <span>2 Adults</span>
+                                                    <span>1
+                                                        room</span>
+                                                </div>
+                                            </div>
+                                            <span class="material-symbols-outlined close-i">
+                                                close
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-4">
+                            <div class="row mb-3">
+                                <div class="col-sm-12">Popular searches</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <ul class="popular-search">
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/desktop.webp">
+                                            </span>
+                                            <label>Thailand</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-5.jpeg">
+                                            </span>
+                                            <label>Dubai</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-3.jpeg">
+                                            </span>
+                                            <label>Maldives</label>
+                                        </li>
+
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/desktop.webp">
+                                            </span>
+                                            <label>Thailand</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-5.jpeg">
+                                            </span>
+                                            <label>Dubai</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-3.jpeg">
+                                            </span>
+                                            <label>Maldives</label>
+                                        </li>
+
+
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/desktop.webp">
+                                            </span>
+                                            <label>Thailand</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-5.jpeg">
+                                            </span>
+                                            <label>Dubai</label>
+                                        </li>
+                                        <li>
+                                            <span>
+                                                <img src="../../assets/travel-3.jpeg">
+                                            </span>
+                                            <label>Maldives</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-md-4 d-flex justify-content-center divider">
+                <div class="row">
+                    <div
+                        class="col-xl-6 col-md-6 px-0 d-flex justify-content-center divider">
+                        <div class="single-search-box">
+                            <div class="searchbox-input">
+                                <div class="custom-select-dropdown"
+                                    (click)="toggleSection('flight')">
+                                    <div class="col-sm-12 search-area">
+                                        <input type="text" placeholder="Check in"
+                                            class="border-end-0">
+                                        <div class="overlap-text">
+                                            <label>Check in</label>
+                                            <span>20 Sep 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-xl-6 col-md-6 px-0 d-flex justify-content-center divider">
+                        <div class="single-search-box">
+                            <div class="searchbox-input">
+                                <div class="custom-select-dropdown"
+                                    (click)="toggleSection('flight')">
+                                    <div class="col-sm-12 search-area">
+                                        <input type="text" placeholder="Check Out">
+                                        <div class="overlap-text">
+                                            <label>Check Out</label>
+                                            <span>20 Sep 2024</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown select-check-in-out" *ngIf="isFlightSectionVisible"
+                    (click)="onClickInside($event)">
+                    <div class="select-specific-date">
+                        <a [class.active]="activeSection === 'specific'"
+                            (click)="selectSection('specific'); closeHotelSection()">Specific dates</a>
+                        <a [class.active]="activeSection === 'flexible'"
+                            (click)="selectSection('flexible'); closeHotelSection()">Flexible dates</a>
+                        <a [class.active]="activeSection === 'anytime'"
+                            (click)="selectSection('anytime'); closeHotelSection()">Anytime</a>
+                    </div>
+
+                    <div class="specific-date" *ngIf="activeSection === 'specific'">
+                    </div>
+
+                    <div class="flexible-dates-wrap flexible-dates"
+                        *ngIf="activeSection === 'flexible'">
+                        <div class="how-long">
+                            <h5>How Long?</h5>
+                            <div class="choose-category">
+                                <button href="#">
+                                    <label>Any Duration</label>
+                                    <p>i'll Decide later</p>
+                                </button>
+                                <button href="#">
+                                    <label>Short stay</label>
+                                    <p>1 to 3 nights</p>
+                                </button>
+                                <button href="#">
+                                    <label>Medium stay</label>
+                                    <p>4 to 7 nights</p>
+                                </button>
+                                <button href="#">
+                                    <label>Long stay</label>
+                                    <p>8+ nights</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexible-dates-wrap anytime"
+                        *ngIf="activeSection === 'anytime'">
+                        <div class="how-long">
+                            <h5>When?</h5>
+                            <div class="choose-category">
+                                <div class="checkbox-container">
+                                    <label class="custom-button"
+                                        *ngFor="let item of repeatCount">
+                                        <span>
+                                            <label>August</label>
+                                            <p>2024</p>
+                                        </span>
+                                        <input type="checkbox">
+                                        <div class="bg"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div
+                                class="w-auto d-flex justify-content-end align-items-center gap-3">
+                                <button class="btn btn-spec">Cancel</button>
+                                <button class="btn btn-spec">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-xl-3 col-md-3 d-flex justify-content-center divider">
+                <div class="single-search-box">
+                    <div class="searchbox-input">
+                        <div class="custom-select-dropdown"
+                            (click)="toggleSection('cruise')">
+                            <div class="col-sm-12 search-area">
+                                <input type="text"
+                                    placeholder="search destination or place">
+                                <div class="overlap-text">
+                                    <label>Guests</label>
+                                    <span>2 Adults (1 Rooms)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown choose-guest-wrap" *ngIf="isCruiseSectionVisible"
+                    (click)="onClickInside($event)">
+                    <div *ngFor="let room of rooms; let i = index"
+                        class="select-room-with-guests">
+                        <div class="room-label">
+                            Room {{ i + 1 }}
+                        </div>
+                        <div class="choose-adult-children">
+                            <div class="choose-adults">
+                                <span>Adults</span>
+                                <label>Ages 18 and Above</label>
+                                <div class="choose-quantative">
+                                    <span>-</span>
+                                    2
+                                    <span>+</span>
+                                </div>
+                            </div>
+                            <div class="children-adults">
+                                <span>Children</span>
+                                <label>Ages 0-17</label>
+                                <div class="choose-quantative">
+                                    <span>-</span>
+                                    0
+                                    <span>+</span>
+                                </div>
+                            </div>
+                            <button *ngIf="rooms.length > 1" class="remove-room"
+                                (click)="removeRoom(i)"><span
+                                    class="material-symbols-outlined">
+                                    close
+                                </span></button>
+                        </div>
+                    </div>
+
+                    <button class="add-another-room mt-4" (click)="addRoom()">
+                        <span class="material-symbols-outlined">add</span> Add Another room
+                    </button>
+
+                    <div class="col-sm-12">
+                        <div
+                            class="w-auto d-flex justify-content-end align-items-center gap-1">
+                            4 adults (2 rooms) <button class="btn btn-spec">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="common-search" routerLink="/hotel-list">Search</button>
+</form>

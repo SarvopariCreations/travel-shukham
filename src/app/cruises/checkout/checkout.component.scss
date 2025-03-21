@@ -1,0 +1,333 @@
+.checkout-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid #dfdfe1;
+    padding: 1rem;
+
+    .logo {
+        img {
+            max-width: 200px;
+        }
+    }
+}
+
+.final-choose-package-detail {
+
+    .choose-package {
+        border: 1px solid #f2f2f2;
+        padding: 1rem;
+
+        grid-template:
+            "details media"
+            "extension media"
+            "inclusion inclusion" / 1fr 16.875rem;
+        gap: 1.25rem 1rem;
+        padding: 1.25rem;
+        border-radius: 4px;
+
+    }
+
+
+    .operated-by {
+        span {
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+    }
+
+    .start-place-label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        svg {
+            width: 18px;
+        }
+
+        b {
+            margin-left: 5px;
+        }
+    }
+
+
+    .hight-light-include {
+
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+
+        div {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            line-height: 1;
+        }
+
+        svg {
+            width: 18px;
+        }
+    }
+}
+
+
+
+.summary-detail {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.06),
+        0px 0px 2px rgba(0, 0, 0, 0.04),
+        0px 0px 5px rgba(0, 0, 0, 0.04),
+        0px 0px 17px rgba(0, 0, 0, 0.03);
+    padding: 1.25rem;
+}
+
+
+.offer-saving {
+    background-color: lightblue;
+    color: black;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+.insurance-option {
+    border: 1px solid #dfdfe1;
+    padding: 2rem 1rem 1rem;
+    position: relative;
+
+    h5 {
+        margin-bottom: 1rem;
+    }
+
+    .special-choice {
+        position: absolute;
+        top: -15px;
+        background-color: bisque;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul {
+        list-style: none;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
+
+        li {
+            display: flex;
+            align-items: start;
+            gap: 5px;
+
+
+            &.disabled {
+                color: #afb0b5;
+            }
+            span{
+                font-size: 18px;
+                line-height: 1.5;
+                color: #eca846;
+            }
+        }
+    }
+
+    .add-protection-btn {
+        width: max-content;
+        border: 0px;
+        background-color: transparent;
+        padding: 5px 15px;
+        display: flex;
+        color: black;
+        align-items: center;
+        border: 1px solid black;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+
+.dont-want-protection {
+    display: flex;
+    border: 1px solid #dfdfe1;
+    padding: 2rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        width: max-content;
+        border: 0px;
+        background-color: transparent;
+        padding: 5px 15px;
+        display: flex;
+        color: black;
+        align-items: center;
+        border: 1px solid black;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+
+.instruction-must {
+    background-color: #ff3855;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: white;
+
+    p {
+        margin-bottom: 0px;
+    }
+}
+
+.input-field-column {
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    .InputLabelWrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .four{
+    // grid-column: span 4;
+    // }
+    // .seven{
+    //     grid-column: span 7;
+    // }
+    // .six{
+    //     grid-column: span 6;
+    // }
+    // .seventeen{
+    //     grid-column: span 17;
+    // }
+    // .eighteen{
+    //     grid-column: span 18;
+    // }
+    label {
+        margin-bottom: 5px;
+    }
+
+    span {
+        input {
+            position: relative;
+            background-color: white;
+            border: 1px solid #afb0b5;
+            border-radius: 2px;
+            box-shadow: none;
+            transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+            display: block;
+            margin-bottom: 1.25rem;
+            color: black;
+            padding: 10px 10px;
+            width: 100%;
+            border-radius: 5px;
+
+            &:focus {
+                border: 1px solid black;
+                outline: none;
+            }
+        }
+    }
+
+}
+
+.categories {
+    span {
+        background-color: #dfdfe1;
+        padding: 4px 10px;
+        font-size: 14px;
+        display: flex;
+    }
+}
+
+.save-details-btn {
+    background-color: black;
+    padding: 10px 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.how-to-do-pay {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 2rem;
+
+    border-top: 1px solid #dfdfe1;
+
+    .add-more {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.payment-type-wrap {
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+@media(max-width:768px){
+    .final-choose-package-detail{
+        padding-inline: 0px !important;
+    }
+    .final-choose-package-detail .choose-package{
+        padding: 1rem;
+    }
+
+    .travel-logo{
+        img{
+            width: 100px;
+        }
+    }
+    .checkout-header{
+        padding-inline:0px;
+    }
+    .dont-want-protection{
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .input-field-column{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .input-field-column span input{
+        margin-bottom: 1rem;
+    }
+
+    ::ng-deep  .payment-option-section{
+        padding: 0px !important;
+    }
+    .payment-type-wrap{
+        background-color: transparent;
+    }
+    .who-going-traval{
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,505 @@
+::ng-deep body {
+    background-color: #f5f5f5;
+}
+
+.banner-section {
+    background-color: #363a45;
+    height: 440px;
+    overflow-y: hidden;
+    position: relative;
+
+    .over-detail {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 410px;
+        top: 1rem;
+        padding: 2rem 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+        z-index: 1;
+        letter-spacing: 0.5px;
+        width: 450px;
+        margin-left: auto;
+
+        h5 {
+            font-weight: 600;
+            color: white;
+        }
+
+        label {
+            font-weight: normal;
+            font-size: 14px;
+            color: #facece;
+            font-weight: lighter;
+        }
+    }
+
+    .bg-set-banner {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    .duration {
+        background-color: rgb(0 0 0 / 29%);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        color: white;
+        padding: 1rem;
+
+        label {
+            color: #e2e2e2;
+        }
+
+        span {
+            color: #eca846;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+    }
+
+    .starting-price {
+        background-color: rgb(0 0 0 / 29%);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        color: white;
+        padding: 1rem;
+
+        label {
+            color: #e2e2e2;
+            font-weight: lighter;
+        }
+
+        span {
+            color: #eca846;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+    }
+
+    .request-call-back {
+    background: linear-gradient(93deg, #ffd599, #eca846);
+        border-radius: 4px;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        gap: 1rem;
+        width: 100%;
+        border: none;
+    }
+}
+
+.our-expertise {
+    span {
+        color: yellowgreen;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+
+.filter-bar {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 4px;
+    height: max-content;
+    position: sticky;
+    top: 1rem;
+    border: 1px solid #dfdfe1;
+    width: 100%;
+
+    ul {
+        margin-left: 0px;
+        list-style: none;
+        padding-left: 0px;
+        gap: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #efefef;
+        padding-bottom: 1rem;
+
+        li {
+            cursor: pointer;
+
+            .form-check {
+                input {
+                    border-color: #6d7ba6;
+                    border-radius: 2px;
+                }
+
+                .form-check-input:checked {
+                background: linear-gradient(93deg, #ffd599, #eca846);
+                    border-color: #eca846;
+                    outline: none;
+
+                    &:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+            }
+
+            label {
+                font-size: 14px;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0px;
+        }
+    }
+}
+
+
+.list-of-package {
+    background-color: white;
+    border-radius: 4px;
+    height: 375px;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+    border: 1px solid #dfdfe1;
+
+    .img-slide {
+        width: 375px;
+        height: 100%;
+        background-color: gray;
+    }
+
+    .place-detail {
+        width: calc(100% - 375px);
+        margin-left: auto;
+        padding: 1rem;
+
+        .durations- {
+            font-weight: 500;
+
+            b {
+                color: #464e67;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .x-amount-view {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: 1px solid #efefef;
+        padding: 1rem 0px;
+        margin-top: 1rem;
+        justify-content: space-between;
+
+        .price {
+            display: flex;
+            flex-direction: column;
+
+            b {
+                font-size: 1.2rem;
+            }
+
+            label {
+                color: #464e67;
+                font-weight: 300;
+                line-height: 1;
+                font-size: 14px;
+            }
+        }
+
+        .view-detail-btn {
+        background: linear-gradient(93deg, #ffd599, #eca846);
+            padding: 0.5rem 1rem;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            border: none;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: rgba(33, 36, 44, 0.16) 0px 5px 10px 0px;
+    }
+}
+
+.voucher-gap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    padding-top: 0.5rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: slategray;
+        font-weight: 300;
+        font-size: 14px;
+
+        span {
+            font-size: 16px;
+            width: 18px;
+        }
+
+        .check {
+            color: green;
+        }
+
+        .close {
+            color: red;
+        }
+    }
+}
+
+.note-inclusion {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 10px 1rem;
+    display: flex;
+    margin-top: auto;
+    flex-direction: column;
+
+    p {
+        color: #5e5e5e;
+        font-size: 14px;
+        margin-bottom: 0px;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 5px;
+    }
+
+    a {
+        font-size: 14px;
+        color: black;
+    }
+}
+
+::ng-deep .red {
+    height: 100%;
+    display: block;
+}
+
+::ng-deep .slide-content {
+    height: 100%;
+}
+
+::ng-deep owl-carousel-o {
+    height: 100%;
+    display: block;
+}
+
+::ng-deep .owl-carousel .owl-item img {
+    height: 375px;
+    object-fit: cover;
+    background-position: center center;
+}
+
+.related-package {
+    margin-top: 3rem;
+
+    h5 {
+        margin-bottom: 1rem;
+    }
+
+    ::ng-deep .owl-theme .owl-nav {
+        position: absolute;
+        top: 40%;
+        right: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ::ng-deep .owl-theme .owl-nav [class*=owl-] {
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+
+    ::ng-deep .owl-carousel .owl-item img {
+        height: 250px;
+        border-radius: 4px 4px 0px 0px;
+        width: 100%;
+    }
+
+    ::ng-deep .slide-content {
+        background-color: white;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #e8eaf3;
+    }
+
+    ::ng-deep .image-info{
+        padding:0px 1rem 1rem;
+
+        h5{
+            font-size: 1rem !important;
+        }
+        P{
+            background: black;
+            width: max-content;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: white !important;
+        }
+    }
+}
+
+.top-70{
+    margin-top: 70px;
+}
+
+@media(max-width:768px){
+    .banner-section{
+        height: auto;
+        padding-bottom: 2rem;
+    }
+    .banner-section .over-detail{
+        height: auto;
+        width: 100%;
+        padding: 1rem;
+    }
+    .bg-set-banner{
+        img{
+            object-fit: cover;
+        }
+    }
+    .banner-section .request-call-back{
+        padding:10px 1rem;
+    }
+    .banner-section .over-detail h5{
+        font-size: 1rem;
+    }
+    .banner-section .duration label, .banner-section .starting-price label{
+        font-size: 12px;
+    }
+    .banner-section .duration, .banner-section .starting-price{
+        padding: 10px;
+    }
+    .filter-button button{
+        background-color: white;
+        border-radius: 8px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;font-size: 16px;
+        padding:5px;
+    }
+
+    #filterModal {
+        ::ng-deep {
+            .filter-bar.filter-activity{
+                display: flex;
+                flex-direction: column;
+            }
+            .modal-dialog{
+                padding: 0px;
+                margin: 0px;
+                border: none;
+            }
+            .modal-content{
+                border: none;
+                border-radius: 0px;
+                .modal-body{
+                    padding: 0px;
+                }
+            }
+        }
+    }
+
+    .list-of-package{
+        flex-direction: column;
+        overflow: auto;
+        height: auto;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+        border-color: rgba(238, 34, 238, 0.1333333333);
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        border-top: 1px solid #d9d9d9;
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        .place-detail{
+            width: 100%;
+            margin-left: 0;
+        }
+        .img-slide{
+            width: 100%;
+        }
+    }
+
+    ::ng-deep {
+        .owl-carousel .owl-item img{
+            height: auto;
+        }
+        .image-info{
+            display: none;
+        }
+        .filter-bar.filter-activity{
+            display: none;
+          }
+    }
+
+    .ts-hotel-search-map{
+        display: flex;
+        flex-direction: column !important;
+        margin-bottom:1rem;    
+    }
+    .filter-button button{
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 33px;
+    }  
+    .related-package{
+        margin-top: 1.5rem;
+    }
+}
+
+::ng-deep {
+    .list-of-package {
+        .tour-listing__card-content {
+            display: none;
+        }
+    }
+
+    .place-detail h4 {
+        font-size: 1rem;
+    }
+
+    .list-of-package .x-amount-view .view-detail-btn {
+        padding: 5px 10px;
+        font-size: 1rem;
+    }
+}
